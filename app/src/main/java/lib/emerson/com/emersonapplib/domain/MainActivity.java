@@ -23,6 +23,10 @@ import lib.emerson.com.emersonapplib.view.CustomTitleView;
 
 public class MainActivity extends baseActivity{
 
+    /*
+    * Git测试
+    * */
+
     private ListView lv = null;
     private TextView tv = null;
     private List<String> listdata = null;

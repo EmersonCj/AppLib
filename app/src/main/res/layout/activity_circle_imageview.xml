@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <lib.emerson.com.emersonapplib.view.CircleImageView
+        android:id="@+id/circleImageView"
+        android:layout_width="150dp"
+        android:layout_height="1500dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/hugh"
+        app:border_width="2dp"
+        app:border_color="@color/black"
+        />
+
+    <Button
+        android:id="@+id/circle_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:layout_centerHorizontal="true"
+        android:text="修改"/>
+
+    <include
+        android:id="@+id/dialog_container"
+        layout="@layout/dialog_custom"
+        android:visibility="gone">
+    </include>
+
+
+</RelativeLayout>

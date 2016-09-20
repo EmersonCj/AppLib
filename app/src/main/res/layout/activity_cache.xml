@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/cache_et"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:hint="请输入要保存的信息"/>
+
+    <Button
+        android:layout_marginTop="50dp"
+        android:id="@+id/cache_bt_save"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="保存"
+        />
+
+    <Button
+        android:id="@+id/cache_bt_show"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="读取"
+        />
+
+    <TextView
+        android:layout_marginTop="50dp"
+        android:id="@+id/cache_tv"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:hint="显示"/>
+
+
+
+</LinearLayout>

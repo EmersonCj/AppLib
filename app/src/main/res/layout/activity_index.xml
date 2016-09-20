@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff">
+
+    <lib.emerson.com.emersonapplib.view.ClearEditText
+        android:id="@+id/filter_edit"
+        android:hint="请输入字母搜索"
+        android:background="#fff"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <!--数据显示-->
+    <ListView
+        android:id="@+id/country_lvcountry"
+        android:layout_below="@+id/filter_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!--索引条-->
+    <lib.emerson.com.emersonapplib.view.SideBar
+        android:id="@+id/sidebar"
+        android:layout_alignParentRight="true"
+        android:layout_width="30dp"
+        android:layout_height="match_parent" >
+
+    </lib.emerson.com.emersonapplib.view.SideBar>
+
+    <!--放大器-->
+    <TextView
+        android:visibility="gone"
+        android:background="#9AC94A"
+        android:id="@+id/dialog"
+        android:gravity="center"
+        android:textSize="50sp"
+        android:textColor="#fff"
+        android:layout_centerInParent="true"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
+
+</RelativeLayout>

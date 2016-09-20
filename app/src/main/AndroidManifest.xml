@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="lib.emerson.com.emersonapplib" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <!--百度地图（有的和上面的重复了）-->
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <!-- 这个权限用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+    <!-- 这个权限用于访问GPS定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+    <!-- SD卡读取权限，用户写入离线定位数据-->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"></uses-permission>
+
+    <application
+        android:name="lib.emerson.com.emersonapplib.App.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/my_icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppBaseTheme">
+
+        <!-- -->
+        <!--android:theme="@style/Anim_fade"-->
+        <activity
+            android:name=".domain.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar"
+            >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="lib.emerson.com.emersonapplib.domain.DialogActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lib.emerson.com.emersonapplib.domain.WidgetActivityOne"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lib.emerson.com.emersonapplib.domain.WidgetActivityTwo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lib.emerson.com.emersonapplib.domain.WidgetActivityThree"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lib.emerson.com.emersonapplib.domain.PhotoWallActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lib.emerson.com.emersonapplib.domain.LruCacheActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lib.emerson.com.emersonapplib.domain.CallBackActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lib.emerson.com.emersonapplib.domain.EventBusActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lib.emerson.com.emersonapplib.domain.DatasActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lib.emerson.com.emersonapplib.domain.ViewPagerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lib.emerson.com.emersonapplib.domain.HorizontalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lib.emerson.com.emersonapplib.domain.ViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lib.emerson.com.emersonapplib.domain.okHttpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lib.emerson.com.emersonapplib.domain.JSONActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lib.emerson.com.emersonapplib.domain.CustomViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lib.emerson.com.emersonapplib.domain.AsyncTaskActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lib.emerson.com.emersonapplib.domain.CacheActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lib.emerson.com.emersonapplib.domain.UtilsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lib.emerson.com.emersonapplib.domain.RefreshActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lib.emerson.com.emersonapplib.domain.WheelViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lib.emerson.com.emersonapplib.domain.AnimationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lib.emerson.com.emersonapplib.domain.RecyclerViewOne"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lib.emerson.com.emersonapplib.domain.RecyclerViewTwo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lib.emerson.com.emersonapplib.domain.RecyclerViewThree"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lib.emerson.com.emersonapplib.domain.LayoutAniActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lib.emerson.com.emersonapplib.domain.XUtils3DbActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lib.emerson.com.emersonapplib.domain.SharedPreActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lib.emerson.com.emersonapplib.domain.CycleVpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lib.emerson.com.emersonapplib.domain.xUtilsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lib.emerson.com.emersonapplib.domain.LoadImageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lib.emerson.com.emersonapplib.domain.ContentProviderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lib.emerson.com.emersonapplib.domain.ImageDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".domain.FileandGIFActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".domain.VolleyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".domain.CircleimageviewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".domain.ViewPagerDemoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".domain.ViewPager2Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".domain.LoadAnimationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".domain.CameraActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".domain.QRcodeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".domain.PopUpWindowActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".zxing.MipcaActivityCapture"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".domain.IndexActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".domain.IOSDialogActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".domain.LeadActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".domain.DifferentMenuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".domain.SimpleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".domain.SlideActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".domain.WeixinDeleteActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".domain.PayTestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PayClass.PayDemoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".domain.SlideFourActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".domain.PullToRefreshLvActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".domain.BitmapUtilsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".domain.TextViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".domain.ListviewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".domain.RecyclerViewFour"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".domain.MyCustomViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".domain.WebViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".domain.ToolbarActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".domain.DrawerlayoutActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light.DarkActionBar"/>
+        <activity
+            android:name=".domain.GestureDetectorActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".domain.SnapPageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".domain.BannerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".domain.CustomViewTestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".domain.FragmentTestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".domain.TabLayoutActivity"
+            android:screenOrientation="portrait" />
+        <!-- 新增页面从这里添加-->
+
+
+
+        <!--支付宝支付-->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" >
+        </activity>
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" >
+        </activity>
+
+        <!--微信支付-->
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop"/>
+
+        <!--百度地图-->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="com.baidu.location.service_v2.2" >
+                </action>
+            </intent-filter>
+        </service>
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="F57ox6u8dDOGHWRm3bqlIj7by0ywfTsX" />
+
+
+        <activity
+            android:name=".domain.BaiduActivity"
+            />
+
+        <activity
+            android:name=".domain.BaiduBaseMapActivity"
+            android:exported="true"
+            android:launchMode="singleTop"/>
+
+        <activity
+            android:name=".domain.BaiduLocationActivity"
+            android:exported="true"
+            android:launchMode="singleTop"/>
+
+
+
+        <!--    MVP模式   -->
+        <activity
+            android:name=".mvp.view.LoginActivity"
+            android:screenOrientation="portrait" />
+
+    </application>
+
+
+
+
+</manifest>

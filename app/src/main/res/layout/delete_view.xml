@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="80dp"
+    android:layout_height="80dp"
+    android:background="#FF4D4D">
+
+    <RelativeLayout
+        android:id="@+id/sweepview_shop_tv_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        >
+
+        <ImageView
+            android:id="@+id/sweepview_shop_iv_delete"
+            android:layout_width="46dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="@dimen/dp_value_10"
+            android:src="@drawable/list_delete" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sweepview_shop_iv_delete"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_value_7"
+            android:text="删除"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_value_12" />
+    </RelativeLayout>
+</RelativeLayout>

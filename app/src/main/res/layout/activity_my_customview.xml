@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:zhy="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp">
+
+    <Button
+        android:id="@+id/layout_my_custom_tv_test"
+        style="@style/btn_style"
+        android:text="画图测试"/>
+
+    <Button
+        android:id="@+id/layout_my_custom_tv_one"
+        style="@style/btn_style"
+        android:layout_below="@+id/layout_my_custom_tv_test"
+        android:layout_marginTop="10dp"
+        android:text="验证框"/>
+
+    <Button
+        android:layout_below="@+id/layout_my_custom_tv_one"
+        android:layout_marginTop="10dp"
+        android:id="@+id/layout_my_custom_tv_two"
+        style="@style/btn_style"
+        android:text="环形加载框"/>
+
+    <Button
+        android:layout_below="@+id/layout_my_custom_tv_two"
+        android:layout_marginTop="10dp"
+        android:id="@+id/layout_my_custom_tv_three"
+        style="@style/btn_style"
+        android:text="音量控制器"/>
+
+    <lib.emerson.com.emersonapplib.view.CustomTitleView
+        android:id="@+id/layout_my_custom_view_one"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_centerInParent="true"
+        custom:titleText="2046"
+        custom:titleTextColor2="#ff0000"
+        custom:titleTextSize="40sp" />
+
+    <lib.emerson.com.emersonapplib.view.CustomProgressBar
+        android:visibility="gone"
+        android:id="@+id/layout_my_custom_view_two"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        custom:speed="10"
+        custom:secondColor="@color/yellow"
+        android:layout_centerInParent="true"
+        custom:firstColor="@color/red"
+        custom:circleWidth="30dp"
+        android:layout_centerHorizontal="true"/>
+
+
+    <lib.emerson.com.emersonapplib.view.CustomVolumControlBar
+        android:visibility="gone"
+        android:id="@+id/layout_my_custom_view_three"
+        android:layout_centerInParent="true"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+
+        zhy:bg="@drawable/volume"
+        zhy:circlewidth="12dp"
+        zhy:dotCount="20"
+        zhy:firstcolor="#252420"
+        zhy:secondcolor="#FDFDFD"
+        zhy:splitSize="25" />
+
+</RelativeLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/load_image_bt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="加载"
+        />
+
+    <ImageView
+        android:id="@+id/load_image_iv"
+        android:layout_below="@+id/load_image_bt"
+        android:layout_width="match_parent"
+        android:scaleType="fitXY"
+        android:layout_height="300dp" />
+
+</RelativeLayout>

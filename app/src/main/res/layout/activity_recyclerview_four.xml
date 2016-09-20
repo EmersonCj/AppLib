@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/recyclerview_top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tv_1"
+            android:layout_weight="1.0"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="XRecyclerView的使用（下拉刷新、上拉加载更多、RecyclerView头部）"/>
+
+        <TextView
+            android:id="@+id/tv_2"
+            android:layout_weight="1.0"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="第三方RecyclerView，有众多功能（具体看博客）"/>
+
+
+    </LinearLayout>
+
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:visibility="gone"
+        android:layout_below="@+id/recyclerview_top_layout"
+        android:layout_marginTop="20dp"
+        android:id="@+id/xrecycleview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+    </com.jcodecraeer.xrecyclerview.XRecyclerView>
+
+    <com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView
+        android:visibility="gone"
+        android:layout_below="@+id/recyclerview_top_layout"
+        android:layout_marginTop="20dp"
+        android:id="@+id/recycleviewTwo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView>
+
+
+</RelativeLayout>

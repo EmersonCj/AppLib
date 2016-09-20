@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lib.emerson.com.emersonapplib.view.snapscrollview.McoyScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content_scrollview"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#f1f1f5"
+    android:fadeScrollbars="true"
+    android:focusable="false"
+    android:fillViewport="true" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/loadlose"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/loadlose"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/loadlose"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/loadlose"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/loadlose"/>
+
+    </LinearLayout>
+</lib.emerson.com.emersonapplib.view.snapscrollview.McoyScrollView>

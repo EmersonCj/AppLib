@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/activity_recyclerview_bt_1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="RecyclerView 正常使用"/>
+
+    <Button
+        android:id="@+id/activity_recyclerview_bt_2"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/activity_recyclerview_bt_1"
+        android:layout_height="50dp"
+        android:text="RecyclerView 加载不同布局"/>
+
+    <Button
+        android:id="@+id/activity_recyclerview_bt_3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/activity_recyclerview_bt_2"
+        android:text="RecyclerView实现动态添加头部/尾部布局"/>
+
+    <TextView
+        android:id="@+id/activity_recyclerview_tv"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/activity_recyclerview_bt_3"
+        android:background="@color/skyblue"
+        android:text="RecyclerView 上/下拉刷新(第三方库)"
+        android:gravity="center"
+        android:textSize="18sp"/>
+
+</RelativeLayout>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/new_item_home_list"
+    android:layout_marginTop="8dp"
+    android:layout_marginLeft="7dp"
+    android:layout_marginRight="7dp"
+    >
+
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginTop="5dp">
+        <ImageView
+            android:id="@+id/new_item_iv_one_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/fruit"
+            android:layout_centerInParent="true"
+            />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_value_66"
+            android:layout_marginLeft="@dimen/dp_value_10"
+            android:layout_marginRight="@dimen/dp_value_10"
+            android:layout_marginTop="@dimen/dp_value_10"
+            >
+            <LinearLayout
+                android:id="@+id/new_item_ll_info"
+                android:layout_toLeftOf="@+id/new_item_tv_one_rl_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center|left"
+                android:layout_alignParentLeft="true"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/new_item_tv_one_goods_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="洛川富士山苹果"/>
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+                <LinearLayout
+                    android:id="@+id/new_item_ll_one_goods_particulars_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_value_8"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/new_item_tv_one_goods_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/sp_value_22"
+                        android:singleLine="true"
+                        android:textColor="#ff7033"
+                        android:text="￥39.8"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_value_4"
+                        android:singleLine="true"
+                        android:textSize="@dimen/sp_value_12"
+                        android:textColor="@color/text_grey"
+                        android:text="/一份2个"/>
+                    <TextView
+                        android:id="@+id/new_item_tv_one_goods_old_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_value_8"
+                        android:singleLine="true"
+                        android:textSize="@dimen/sp_value_12"
+                        android:textColor="@color/text_grey"
+                        android:text="超市￥39.8"/>
+                </LinearLayout>
+
+
+                </FrameLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/new_item_tv_one_rl_state"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center|right"
+                android:layout_alignParentRight="true">
+                <RelativeLayout
+                    android:id="@+id/new_item_rl_one_buy_state_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+                    <TextView
+                        android:id="@+id/new_item_iv_one_buy"
+                        android:layout_width="@dimen/dp_value_66"
+                        android:layout_height="@dimen/dp_value_40"
+                        android:background="@drawable/rounded_pay2"
+                        android:text="买"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/dp_value_16"
+                        />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

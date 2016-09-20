@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lib.emerson.com.emersonapplib.view.MyLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+   <Button
+       android:id="@+id/button1"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="Button1" />
+
+   <Button
+       android:id="@+id/button2"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="Button2" />
+
+</lib.emerson.com.emersonapplib.view.MyLayout>
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:orientation="vertical"-->
+    <!--android:gravity="center"-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="fill_parent"-->
+    <!--android:id="@+id/mylayout">-->
+
+   <!--<lib.emerson.com.emersonapplib.view.CustomButton-->
+       <!--android:id="@+id/my_btn"-->
+       <!--android:layout_width="match_parent"-->
+       <!--android:layout_height="wrap_content"-->
+       <!--android:text="click test"/>-->
+
+   <!--<ImageView-->
+       <!--android:id="@+id/my_tv"-->
+       <!--android:layout_marginTop="100dp"-->
+       <!--android:layout_width="50dp"-->
+       <!--android:layout_height="50dp"-->
+       <!--android:background="@color/black"/>-->
+
+<!--</RelativeLayout>-->

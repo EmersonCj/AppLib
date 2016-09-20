@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--xmlns:android_custom="http://schemas.Android.com/apk/res/com.example.circlepregress"-->
+
+    <!--<FrameLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="1">-->
+        <!--<lib.emerson.com.emersonapplib.view.CustomView-->
+            <!--android:id="@+id/view1"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--app:border_color="#ff1ff41f"-->
+            <!--app:border_width="2dp"/>-->
+    <!--</FrameLayout>-->
+    <!--<FrameLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="1">-->
+        <!--<lib.emerson.com.emersonapplib.view.CustomView-->
+            <!--android:id="@+id/view2"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--app:border_color="#ff2523f4"-->
+            <!--app:border_width="2dp"/>-->
+    <!--</FrameLayout>-->
+    
+    <!--<lib.emerson.com.emersonapplib.view.RoundProgressBar-->
+        <!--android:id="@+id/roundProgressBar1"-->
+        <!--android:layout_width="80dip"-->
+        <!--android:layout_height="80dip"-->
+        <!--android:layout_centerInParent="true"-->
+
+        <!--android_custom:roundColor="#D1D1D1"-->
+        <!--android_custom:roundProgressColor="@android:color/black"-->
+        <!--android_custom:textColor="#9A32CD"-->
+        <!--android_custom:textIsDisplayable="true"-->
+        <!--android_custom:roundWidth="10dip"-->
+        <!--android_custom:textSize="18sp"/>-->
+
+    <!--<Button-->
+        <!--android:id="@+id/button1"-->
+        <!--android:layout_width="80dp"-->
+        <!--android:layout_height="80dp"-->
+        <!--android:text="Start"-->
+        <!--android:layout_marginTop="50dp"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_below="@+id/roundProgressBar1"/>-->
+    <lib.emerson.com.emersonapplib.view.CustomTitleView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_centerInParent="true"
+        custom:titleText="2046"
+        custom:titleTextColor2="#ff0000"
+        custom:titleTextSize="40sp" />
+</RelativeLayout>

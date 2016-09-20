@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+        <LinearLayout
+            android:layout_height="100.0dip"
+            android:layout_width="fill_parent"
+            android:background="#FFFFFF"
+            android:id="@+id/linearLayout1">
+
+            <TextView android:layout_height="fill_parent"
+                android:layout_width="fill_parent"
+                android:id="@+id/text1"
+                android:textSize="22.0dip"
+                android:textColor="#000000"
+                android:text="水果"
+                android:gravity="center"
+                android:layout_weight="1.0"/>
+
+            <TextView
+                android:layout_height="fill_parent"
+                android:layout_width="fill_parent"
+                android:id="@+id/text2"
+                android:textSize="22.0dip"
+                android:textColor="#000000"
+                android:text="蔬菜"
+                android:gravity="center"
+                android:layout_weight="1.0"/>
+
+            <TextView android:layout_height="fill_parent"
+                android:layout_width="fill_parent"
+                android:id="@+id/text3"
+                android:textSize="22.0dip"
+                android:textColor="#000000"
+                android:text="肉类"
+                android:gravity="center"
+                android:layout_weight="1.0"/>
+
+            <TextView android:layout_height="fill_parent"
+                android:layout_width="fill_parent"
+                android:id="@+id/text4"
+                android:textSize="22.0dip"
+                android:textColor="#000000"
+                android:text="鱼类"
+                android:gravity="center"
+                android:layout_weight="1.0"/>
+
+        </LinearLayout>
+
+    <ImageView
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:id="@+id/cursor"
+        android:src="@drawable/view"
+        android:scaleType="matrix"/>
+
+
+
+        <android.support.v4.view.ViewPager
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:background="#000000"
+            android:id="@+id/vPager"
+            android:layout_weight="1.0"
+            android:persistentDrawingCache="animation"
+            android:flipInterval="30"
+            android:layout_gravity="center"/>
+
+
+
+</LinearLayout>

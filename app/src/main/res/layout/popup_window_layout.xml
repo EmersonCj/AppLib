@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#EE3C3C3C">
+
+        <FrameLayout
+            android:id="@+id/yunfei_layout_zhuti"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginBottom="80dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:background="@color/white"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <RelativeLayout
+                    android:id="@+id/yunfei_layout_top_layout"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/yunfei_layout_top_iv"
+                        android:layout_width="2dp"
+                        android:layout_height="22dp"
+                        android:background="@color/main_color"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="关于运费"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_grey"
+                        android:layout_toRightOf="@+id/yunfei_layout_top_iv"
+                        android:layout_marginLeft="7dp"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_below="@+id/yunfei_layout_top_layout"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="14sp"
+                        android:text="@string/test"/>
+
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/yunfei_layout_zhidaol"
+                    android:layout_width="130dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/rounded_pay2"
+                    android:text="知道了"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    />
+
+            </RelativeLayout>
+
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+</RelativeLayout>

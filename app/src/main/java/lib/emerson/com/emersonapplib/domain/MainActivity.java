@@ -22,6 +22,7 @@ import lib.emerson.com.emersonapplib.utils.common.FirstEvent;
 import lib.emerson.com.emersonapplib.view.CustomTitleView;
 
 public class MainActivity extends baseActivity{
+
     private ListView lv = null;
     private TextView tv = null;
     private List<String> listdata = null;

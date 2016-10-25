@@ -75,12 +75,10 @@ public class RecycleviewLinearAdapter<T> extends RecyclerView.Adapter<Recyclevie
     @Override
     public void onBindViewHolder(final RecycleviewLinearAdapter.LinearViewHolder holder, final int position) {
         holder.tv.setText(mDatas.get(position) + "");
-        if (mOnItemClickLitener != null)
-        {
-            holder.itemView.setOnClickListener(new View.OnClickListener()
-            {
+        if (mOnItemClickLitener != null) {
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v){
+                public void onClick(View v) {
                     int pos = holder.getLayoutPosition();
                     mOnItemClickLitener.onItemClick(holder.itemView, pos);
                 }
@@ -101,6 +99,7 @@ public class RecycleviewLinearAdapter<T> extends RecyclerView.Adapter<Recyclevie
 
     public class LinearViewHolder extends RecyclerView.ViewHolder {
         TextView tv;
+
         public LinearViewHolder(View itemView) {
             super(itemView);
             tv = (TextView) itemView.findViewById(R.id.tv_show);
@@ -108,13 +107,13 @@ public class RecycleviewLinearAdapter<T> extends RecyclerView.Adapter<Recyclevie
     }
 
     private OnItemClickLitener mOnItemClickLitener;
+
     //为用户提供回调接口，用户需要实现
-    public interface OnItemClickLitener{
+    public interface OnItemClickLitener {
         void onItemClick(View view, int position);
     }
 
-    public void setOnItemClickLitener(OnItemClickLitener mOnItemClickLitener)
-    {
+    public void setOnItemClickLitener(OnItemClickLitener mOnItemClickLitener) {
         this.mOnItemClickLitener = mOnItemClickLitener;
     }
 

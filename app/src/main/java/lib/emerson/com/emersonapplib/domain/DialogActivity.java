@@ -12,12 +12,12 @@ import lib.emerson.com.emersonapplib.niffydialogeffects.NiftyDialogBuilder;
 /**
  * Created by Administrator on 2016/6/2.
  */
-public class DialogActivity extends Activity {
+public class DialogActivity extends baseActivity {
     private Effectstype effect;
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dialog);
     }

@@ -3,9 +3,13 @@ package lib.emerson.com.emersonapplib.domain;
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.alipay.tscenter.biz.rpc.vkeydfp.result.BaseResult;
 
 import org.xutils.DbManager;
 import org.xutils.common.Callback;
@@ -18,147 +22,168 @@ import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
+import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
+
+import lib.emerson.com.emersonapplib.App.MyApplication;
 import lib.emerson.com.emersonapplib.R;
+import lib.emerson.com.emersonapplib.entity.Store;
 import lib.emerson.com.emersonapplib.entity.StudentInfo;
+import lib.emerson.com.emersonapplib.utils.Image.BitmapUtils;
+import lib.emerson.com.emersonapplib.utils.XUtils.MyCallBack;
+import lib.emerson.com.emersonapplib.utils.XUtils.XutilsHttp;
 
 /**
  * Created by Administrator on 2016/7/19.
+ * XUtils3: http://blog.csdn.net/it1039871366/article/details/50607513
+ *          http://blog.csdn.net/u011607885/article/details/52367105
+ *
+ * XUtils2: http://blog.csdn.net/dj0379/article/details/38356773/
  */
 
-/*4个模块：DbUtils、HttpUtils、ViewUtils、BitmapUtils*/
-//viewUtils加载Activity布局,使用了这句之后oncreate里面不需要调用setcontentView
-@ContentView(R.layout.activity_xutils)
+
 public class xUtilsActivity extends baseActivity {
-        // 使用ViewUtils绑定控件
-        @ViewInject(R.id.txtv)
-        private TextView txtv;
-        @ViewInject(R.id.imgv)
-        private ImageView imgv;
-        // 图片地址
-        private String imagUrl = "http://pic8.nipic.com/20100709/4752803_210430061441_2.jpg";
+    @ViewInject(R.id.iv_imgv)
+    private ImageView imageView;
+    private ImageOptions imageOptions;
 
-        @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            // 把注入viewinject
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_xutils);
+        /* (一) 注解模块的使用
+            1.在Application的oncreate方法中加入下面代码:
+            x.Ext.init(this);
+
+            2.在Activity的oncreate方法中加入下面代码:
             x.view().inject(this);
-        }
 
-        /**
-         * 使用BitmapUtils显示图片
-         *
-         * 使用ViewUtils设置按钮的点击事件,方法必须要私有化， 参数格式和type的参数一致,为了混淆方便，方法名要以Event或者Click结尾
-         * type可以不写，默认是点击事件类型
-         */
-        @Event(value = R.id.btn, type = View.OnClickListener.class)
-        private void btnClick(View view) {
-            // 设置加载图片的参数
-            ImageOptions options = new ImageOptions.Builder()
-                    // 是否忽略GIF格式的图片
-                    .setIgnoreGif(false)
-                    // 图片缩放模式
-                    .setImageScaleType(ImageView.ScaleType.FIT_XY)
-                    // 下载中显示的图片
-                    .setLoadingDrawableId(R.drawable.loadlose)
-                    // 下载失败显示的图片
-                    .setFailureDrawableId(R.drawable.loadlose)
-                    // 得到ImageOptions对象
-                    .build();
-            // 加载图片
-
-            x.image().bind(imgv, imagUrl, options, new Callback.CommonCallback<Drawable>() {
-                @Override
-                public void onSuccess(Drawable arg0) {
-                    LogUtil.e("下载成功");
-                }
-
-                @Override
-                public void onFinished() {
-                    LogUtil.e("下载完成");
-                }
-
-                @Override
-                public void onError(Throwable arg0, boolean arg1) {
-
-                    LogUtil.e("下载出错，" + arg0.getMessage());
-                }
-
-                @Override
-                public void onCancelled(CancelledException arg0) {
-                    LogUtil.e("下载取消");
-                }
-            });
-            // 加载本地图片
-            // x.image().bind(imgv, "assets://test.gif", options);
-            // x.image().bind(iv_big_img, new
-            // File("/sdcard/test.gif").toURI().toString(), imageOptions);
-            // x.image().bind(iv_big_img, "/sdcard/test.gif", imageOptions);
-            // x.image().bind(iv_big_img, "file:///sdcard/test.gif", imageOptions);
-            // x.image().bind(iv_big_img, "file:/sdcard/test.gif", imageOptions);
-        }
-
-        /**
-         * httpUtils演示，加载百度首页到TextView上面
-         */
-        @Event(R.id.btnHttp)
-        private void showEvent(View view) {
-            // 请求参数
-            RequestParams params = new RequestParams("http://www.baidu.com");
-            x.http().get(params, new Callback.CommonCallback<String>() {
-
-                @Override
-                public void onCancelled(CancelledException arg0) {
-
-                }
-
-                @Override
-                public void onError(Throwable arg0, boolean arg1) {
-
-                }
-
-                @Override
-                public void onFinished() {
-
-                }
-
-                @Override
-                public void onSuccess(String arg0) {
-                    // 成功下载，显示到txtv上面
-                    txtv.setText(arg0);
-                }
-            });
-        }
-
-        /**
-         * 演示DbUtils，使用实体类Studentinfo生成表，数据库保存在data/data/包名/databases下面
-         */
-        @Event(R.id.btnDB)
-        private void createDbEvent(View view) {
-            DbManager.DaoConfig daoConfig = new DbManager.DaoConfig()
-                    // 数据库的名字
-                    .setDbName("SudentInfo")
-                    // 保存到指定路径
-                    // .setDbDir(new
-                    // File(Environment.getExternalStorageDirectory().getAbsolutePath()))
-                    // 数据库的版本号
-                    .setDbVersion(1)
-                    // 数据库版本更新监听
-                    .setDbUpgradeListener(new DbManager.DbUpgradeListener() {
-                        @Override
-                        public void onUpgrade(DbManager arg0, int arg1, int arg2) {
-                            LogUtil.e("数据库版本更新了！");
-                        }
-                    });
-            DbManager manager = x.getDb(daoConfig);
-            try {
-                StudentInfo info = new StudentInfo();
-                info.setAge(16);
-                info.setName("小花");
-                manager.saveOrUpdate(info);
-            } catch (DbException e) {
-                e.printStackTrace();
-            }
-
-        }
+            3.可以开始使用了。
+        */
+        x.view().inject(this);
+        imageOptions = MyApplication.getInstance().getImageOptions();
 
     }
+
+
+    /*
+    * (二) 网络模块的使用
+    * */
+    @Event(value = R.id.btnHttp, type = View.OnClickListener.class)
+    private void btnClickHttp(View view){
+        String url="http://test.wxw7z.com/index.php/Api/Store/getStoreInfo";
+        Map<String,String> map=new HashMap<>();
+        map.put("store_id", "10");
+        XutilsHttp.Get(url, map, new MyCallBack<String>(){
+
+            @Override
+            public void onSuccess(String result) {
+                super.onSuccess(result);
+                Log.e("onSuccess", result);
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+                super.onError(ex, isOnCallback);
+                Log.e("onError", ex.toString());
+
+            }
+        });
+
+    }
+
+
+    /*
+    * 图片加载模块,加载方法有bind，loadDrawable，loadFile
+    * */
+    @Event(value = R.id.btnBitmap, type = View.OnClickListener.class)
+    private void btnClickBitmap(View view){
+        String url = "http://pic8.nipic.com/20100709/4752803_210430061441_2.jpg";
+
+        /*
+        * 加载图片的4个bind方法
+        * */
+        x.image().bind(imageView, url);
+        x.image().bind(imageView, url, imageOptions);
+        x.image().bind(imageView, url, imageOptions, new Callback.CommonCallback<Drawable>() {
+            @Override
+            public void onSuccess(Drawable arg0) {
+                LogUtil.e("下载成功");
+            }
+
+            @Override
+            public void onFinished() {
+                LogUtil.e("下载完成");
+            }
+
+            @Override
+            public void onError(Throwable arg0, boolean arg1) {
+
+                LogUtil.e("下载出错，" + arg0.getMessage());
+            }
+
+            @Override
+            public void onCancelled(CancelledException arg0) {
+                LogUtil.e("下载取消");
+            }
+        });
+
+
+        /**
+         * loadDrawable()方法加载图片
+         */
+        Callback.Cancelable cancelable = x.image().loadDrawable(url, imageOptions, new Callback.CommonCallback<Drawable>() {
+            @Override
+            public void onSuccess(Drawable result) {
+                imageView.setImageDrawable(result);
+            }
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+            }
+            @Override
+            public void onCancelled(CancelledException cex) {
+            }
+            @Override
+            public void onFinished() {
+            }
+        });
+        //主动取消loadDrawable()方法
+        //cancelable.cancel();
+
+        /**
+         * loadFile()方法
+         * 应用场景：当我们通过bind()或者loadDrawable()方法加载了一张图片后，
+         * 它会保存到本地文件中，那当我需要这张图片时，就可以通过loadFile()方法进行查找。
+         * urls[0]：网络地址
+         */
+        x.image().loadFile(url,imageOptions,new Callback.CacheCallback<File>(){
+            @Override
+            public boolean onCache(File result) {
+                //在这里可以做图片另存为等操作
+                Log.e("JAVA","file："+result.getPath()+result.getName());
+                return true; //相信本地缓存返回true
+            }
+            @Override
+            public void onSuccess(File result) {
+                Log.e("JAVA","file");
+            }
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+            }
+            @Override
+            public void onCancelled(CancelledException cex) {
+            }
+            @Override
+            public void onFinished() {
+            }
+        });
+
+
+    }
+
+
+
+
+}

@@ -1,4 +1,4 @@
-package lib.emerson.com.emersonapplib.adapter;
+package lib.emerson.com.emersonapplib.Adapter;
 
 import android.content.Context;
 import android.graphics.Paint;
@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.alipay.tscenter.biz.rpc.vkeydfp.result.BaseResult;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;

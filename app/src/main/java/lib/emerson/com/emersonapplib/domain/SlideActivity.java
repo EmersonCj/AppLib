@@ -31,6 +31,9 @@ public class SlideActivity extends baseActivity {
             case R.id.button4:
                 startActivity(new Intent(this, SlideFourActivity.class));
                 break;
+            case R.id.button5:
+                startActivity(new Intent(this, SwipeDelMenuActivity.class));
+                break;
         }
     }
 

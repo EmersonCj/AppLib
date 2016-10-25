@@ -14,7 +14,7 @@ import android.widget.LinearLayout;
 import java.util.HashMap;
 import java.util.Map;
 
-import lib.emerson.com.emersonapplib.adapter.HorizontalScrollViewAdapter;
+import lib.emerson.com.emersonapplib.Adapter.HorizontalScrollViewAdapter;
 
 /**
  * Created by Administrator on 2016/6/2.

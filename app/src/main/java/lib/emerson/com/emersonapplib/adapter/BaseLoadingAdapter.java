@@ -1,4 +1,4 @@
-package lib.emerson.com.emersonapplib.adapter;
+package lib.emerson.com.emersonapplib.Adapter;
 
 import android.support.v4.util.CircularArray;
 import android.support.v4.view.ViewCompat;

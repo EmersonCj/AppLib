@@ -18,8 +18,6 @@ import android.widget.Toast;
 
 import com.jcodecraeer.xrecyclerview.ProgressStyle;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
-import com.zhy.adapter.recyclerview.CommonAdapter;
-import com.zhy.adapter.recyclerview.base.ViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,13 +53,15 @@ public class RecyclerViewThree extends baseActivity{
         for(int i=0 ; i<20 ; i++){
             lists.add("123"+i);
         }
-        recycleviewLinearAdapter=new RecycleviewLinearAdapter(lists);
+        recycleviewLinearAdapter = new RecycleviewLinearAdapter(lists);
 
         LayoutInflater layoutInflater = getLayoutInflater();
         View view = layoutInflater.inflate(R.layout.item_top, null);
         recycleviewLinearAdapter.addHeadView(view);
+
         View view1 = layoutInflater.inflate(R.layout.item_foot, null);
         recycleviewLinearAdapter.addFootView(view1);
+
         tv =(TextView) view1.findViewById(R.id.item_foot_tv);
         tv.setOnClickListener(new View.OnClickListener() {
             @Override

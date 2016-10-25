@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import lib.emerson.com.emersonapplib.R;
-import lib.emerson.com.emersonapplib.adapter.RecyclerAdapter;
+import lib.emerson.com.emersonapplib.Adapter.RecyclerAdapter;
 
 /**
  * Created by YangJianCong on 2016/9/19.

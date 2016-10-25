@@ -133,7 +133,8 @@ public class CustomTitleView extends View {
     * 视图大小的控制是由父视图、布局文件、以及视图本身共同完成的，
     * 父视图会提供给子视图参考的大小（），而开发人员可以在XML文件中指定视图的大小，然后视图本身会对最终的大小进行拍板。*/
     @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec){      //这两个参数是-我们自定义view的父控件的边界参数（即view宽高的最大值）
+    //widthMeasureSpec和heightMeasureSpec来自父视图，这两个值都是由父视图经过计算后传递给子视图的-我们自定义view的父控件的边界参数（即view宽高的最大值）
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec){
         // super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         int width = 0;
         int height = 0;
@@ -149,13 +150,15 @@ public class CustomTitleView extends View {
         int specSize = MeasureSpec.getSize(widthMeasureSpec);
 
         /*
-        * 用户在布局中对view宽/高度进行设置时，传入的参数就会不同
-        * 我们就对view的宽高进行设置，避免超出最大值*/
+        * 用户在布局中对view宽/高度进行设置时，根据传入的参数specMode，我们会对view的宽高进行设置，避免超出最大值
+        * EXACTLY：父视图希望子视图的大小应该是由specSize的值来决定的。
+        * AT_MOST：子视图最多只能是specSize中指定的大小。
+        * */
         switch (specMode){
             case MeasureSpec.EXACTLY:       //当view的大小设置为精确值时，容器传入的是EXACTLY。所以此时的specSize 代表的是精确的尺寸
                 width = getPaddingLeft() + getPaddingRight() + specSize;
                 break;
-            case MeasureSpec.AT_MOST:      // 当view的大小设置WARP_CONTENT时，容器传入的是AT_MOST。所以此时的specSize 代表的是最大可获得的空间
+            case MeasureSpec.AT_MOST:      // 当view的大小设置WARP_CONTENT时，容器传入的是AT_MOST。所以此时的specSize代表的是最大可获得的空间，view可以任意设置，但不能超过specSize
                 width = getPaddingLeft() + getPaddingRight() + mBound.width();
                 break;
         }

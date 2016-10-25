@@ -1,21 +1,14 @@
 package lib.emerson.com.emersonapplib.domain;
 
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
-import java.util.StringTokenizer;
 
 import lib.emerson.com.emersonapplib.R;
-import lib.emerson.com.emersonapplib.adapter.SlideLvAdapter;
+import lib.emerson.com.emersonapplib.Adapter.SlideLvAdapter;
 
 /**
  * Created by Administrator on 2016/8/19.

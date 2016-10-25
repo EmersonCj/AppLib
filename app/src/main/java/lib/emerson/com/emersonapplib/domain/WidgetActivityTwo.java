@@ -1,12 +1,15 @@
 package lib.emerson.com.emersonapplib.domain;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.ScrollView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,17 +20,20 @@ import lib.emerson.com.emersonapplib.view.MyListview;
 /**
  * Created by Administrator on 2016/6/2.
  */
-public class WidgetActivityTwo extends Activity {
+public class WidgetActivityTwo extends baseActivity {
     private List<String> listData = null;
     //想要在scrollView中正常使用Listview，必须要重写Listview，并在onMeasure阶段中计算出Listview的高度
     private MyListview lv_show = null;
     private ArrayAdapter<String> adapter = null;
+    private ScrollView scrollView;
+
 
     String dataArray[] = {"1","2","3","4","5","6","1","2","3","4","5","6"};
 
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scrollview_test);
+        scrollView = (ScrollView) findViewById(R.id.layout_scrollView);
         lv_show = (MyListview) this.findViewById(R.id.scrollView_lv);
         lv_show.setHaveScrollbar(false);     //false为正常显示
         listData = new ArrayList<String>();
@@ -35,7 +41,25 @@ public class WidgetActivityTwo extends Activity {
             listData.add(dataArray[i]);
         adapter = new ArrayAdapter<String>(WidgetActivityTwo.this, R.layout.item_show, R.id.tv_item, listData);
         lv_show.setAdapter(adapter);
-        setListViewHeightBasedOnChildren(lv_show);
+
+
+        findViewById(R.id.scrollView_bt_one).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                scrollView.setVisibility(View.VISIBLE);
+            }
+        });
+
+        findViewById(R.id.scrollView_bt_two).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                jump(WidgetActivityTwo.this, new Intent().setClass(WidgetActivityTwo.this, ScrollViewStickyActivity.class), false);
+            }
+        });
+
+
+
+
     }
 
 

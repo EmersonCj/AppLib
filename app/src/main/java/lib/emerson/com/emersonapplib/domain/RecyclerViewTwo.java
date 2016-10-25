@@ -12,7 +12,7 @@ import java.util.List;
 
 import lib.emerson.com.emersonapplib.R;
 import lib.emerson.com.emersonapplib.Test.GoodsBean;
-import lib.emerson.com.emersonapplib.adapter.GoodsAdapter;
+import lib.emerson.com.emersonapplib.Adapter.GoodsAdapter;
 
 /**
  * Created by Administrator on 2016/7/8.

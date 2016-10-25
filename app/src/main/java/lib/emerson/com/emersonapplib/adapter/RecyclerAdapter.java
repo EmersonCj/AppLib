@@ -1,6 +1,5 @@
-package lib.emerson.com.emersonapplib.adapter;
+package lib.emerson.com.emersonapplib.Adapter;
 
-import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;

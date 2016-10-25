@@ -2,19 +2,16 @@ package lib.emerson.com.emersonapplib.domain;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import lib.emerson.com.emersonapplib.R;
-import lib.emerson.com.emersonapplib.adapter.RecyclerViewAdapter;
+import lib.emerson.com.emersonapplib.Adapter.RecyclerViewAdapter;
 
 /**
  * Created by Administrator on 2016/7/8.

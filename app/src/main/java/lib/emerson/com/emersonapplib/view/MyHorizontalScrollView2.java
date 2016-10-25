@@ -7,15 +7,13 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.AdapterView;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import lib.emerson.com.emersonapplib.adapter.HorizontalScrollViewAdapter;
-import lib.emerson.com.emersonapplib.adapter.HorizontalScrollViewAdapter2;
+import lib.emerson.com.emersonapplib.Adapter.HorizontalScrollViewAdapter2;
 
 /**
  * Created by Administrator on 2016/7/4.

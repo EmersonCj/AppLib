@@ -39,7 +39,6 @@ public class CycleVpActivity extends baseActivity {
         bt2 = (Button) findViewById(R.id.cycle_bt_two);
         mImageCycleView = (ImageCycleView) findViewById(R.id.icv_topView);
 
-
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

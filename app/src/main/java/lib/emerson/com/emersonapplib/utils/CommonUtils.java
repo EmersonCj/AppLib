@@ -2,6 +2,8 @@ package lib.emerson.com.emersonapplib.utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.text.TextUtils;
@@ -14,8 +16,11 @@ import android.widget.EditText;
 
 import java.io.File;
 import java.security.MessageDigest;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import lib.emerson.com.emersonapplib.utils.zhyUtils.LogUtils;
 
 
 /**
@@ -259,5 +264,40 @@ public class CommonUtils {
 		imm.hideSoftInputFromWindow(mEditText.getWindowToken(), 0);
 	}
 
+	/**
+	 * 判断 用户是否安装微信客户端
+	 */
+	public static boolean isWeixinAvilible(Context context) {
+		final PackageManager packageManager = context.getPackageManager();// 获取packagemanager
+		List<PackageInfo> pinfo = packageManager.getInstalledPackages(0);// 获取所有已安装程序的包信息
+		if (pinfo != null) {
+			for (int i = 0; i < pinfo.size(); i++) {
+				String pn = pinfo.get(i).packageName;
+				if (pn.equals("com.tencent.mm")) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+
+	/**
+	 * 判断 用户是否安装QQ客户端
+	 */
+	public static boolean isQQClientAvailable(Context context) {
+		final PackageManager packageManager = context.getPackageManager();
+		List<PackageInfo> pinfo = packageManager.getInstalledPackages(0);
+		if (pinfo != null) {
+			for (int i = 0; i < pinfo.size(); i++) {
+				String pn = pinfo.get(i).packageName;
+				LogUtils.e("pn = "+pn);
+				if (pn.equalsIgnoreCase("com.tencent.qqlite") || pn.equalsIgnoreCase("com.tencent.mobileqq")) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 
 }

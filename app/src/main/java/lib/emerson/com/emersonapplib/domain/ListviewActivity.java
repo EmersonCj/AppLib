@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import lib.emerson.com.emersonapplib.R;
-import lib.emerson.com.emersonapplib.adapter.ListTestAdapter;
+import lib.emerson.com.emersonapplib.Adapter.ListTestAdapter;
 
 /**
  * Created by YangJianCong on 2016/8/31.

@@ -1,9 +1,6 @@
-package lib.emerson.com.emersonapplib.adapter;
+package lib.emerson.com.emersonapplib.Adapter;
 
-import android.app.Activity;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,12 +8,10 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 import lib.emerson.com.emersonapplib.R;
-import lib.emerson.com.emersonapplib.domain.RefreshActivity;
 
 /**
  * Created by Administrator on 2016/7/6.

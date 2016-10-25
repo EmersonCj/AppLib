@@ -1,4 +1,4 @@
-package lib.emerson.com.emersonapplib.adapter;
+package lib.emerson.com.emersonapplib.Adapter;
 
 import android.content.Context;
 import android.view.View;

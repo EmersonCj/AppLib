@@ -1,4 +1,4 @@
-package lib.emerson.com.emersonapplib.adapter;
+package lib.emerson.com.emersonapplib.Adapter;
 
 /**
  * Created by Administrator on 2016/6/28.

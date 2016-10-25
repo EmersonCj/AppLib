@@ -3,14 +3,7 @@ package lib.emerson.com.emersonapplib.domain;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
-import android.widget.HorizontalScrollView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.TextView;
 
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
@@ -20,7 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import lib.emerson.com.emersonapplib.R;
-import lib.emerson.com.emersonapplib.adapter.HorizontalScrollViewAdapter2;
+import lib.emerson.com.emersonapplib.Adapter.HorizontalScrollViewAdapter2;
 import lib.emerson.com.emersonapplib.view.MyHorizontalScrollView2;
 
 /**

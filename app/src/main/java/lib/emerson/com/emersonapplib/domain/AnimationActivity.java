@@ -1,6 +1,5 @@
 package lib.emerson.com.emersonapplib.domain;
 
-import android.animation.LayoutTransition;
 import android.content.Intent;
 import android.graphics.PointF;
 import android.os.Bundle;
@@ -14,10 +13,8 @@ import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.AnimatorSet;
 import com.nineoldandroids.animation.ObjectAnimator;
-import com.nineoldandroids.animation.PropertyValuesHolder;
 import com.nineoldandroids.animation.TypeEvaluator;
 import com.nineoldandroids.animation.ValueAnimator;
 
@@ -29,10 +26,18 @@ import lib.emerson.com.emersonapplib.R;
 
 /**
  * Created by Administrator on 2016/7/7.
+ * 在Android动画中，总共有两种类型的动画View Animation(视图动画)和Property Animator(属性动画)；
+ * <p>
+ * 其中
+ * View Animation包括Tween Animation（补间动画）     如下面介绍的Alpha、Scale、Rotate、Translate
+ * Frame Animation(帧动画)        图片资源过多，很少使用
+ * Property Animator包括ValueAnimator和ObjectAnimation；
  */
 public class AnimationActivity extends baseActivity {
     //http://blog.csdn.net/yanbober/article/details/46481171
     //http://www.it165.net/pro/html/201505/41670.html
+
+    //http://blog.csdn.net/harvic880925/article/details/50995268
     @ViewInject(R.id.ball)
     private ImageView mBlueBall;
     @ViewInject(R.id.animation_show)
@@ -42,7 +47,6 @@ public class AnimationActivity extends baseActivity {
 
     private int width;
     private int height;
-
 
 
     @Override
@@ -64,12 +68,26 @@ public class AnimationActivity extends baseActivity {
 　　  ３、Rotate：旋转效果
 　　  ４、Translate：移动效果
 
+     #视图动画的基类属性#
+        android:duration            动画持续时间，以毫秒为单位
+        android:fillAfter           如果设置为true，控件动画结束时，将保持动画最后时的状态
+        android:fillBefore          如果设置为true,控件动画结束时，还原到开始动画前的状态
+        android:fillEnabled         与android:fillBefore 效果相同，都是在动画结束时，将控件还原到初始化状态
+        android:repeatCount         重复次数
+        android:repeatMode	        重复类型，有reverse和restart两个值，reverse表示倒序回放，restart表示重新放一遍，
+                                    必须与repeatCount一起使用才能看到效果。因为这里的意义是重复的类型，即回放时的动作。
+        android:interpolator        设定插值器，其实就是指定的动作效果，比如弹跳效果等
+
+     #set标签——定义动作合集#
+     对指定的控件定义动作合集，Set标签就可以将几个不同的动作定义成一个组；
+     set标签自已是没有属性的，他的属性都是从Animation继承而来，但当它们用于Set标签时，就会对Set标签下的所有子控件都产生作用。
+
         使用XML去写动画请看：view_anim.xml的介绍
 
     * */
-    @Event(value = R.id.view_animation,type = View.OnClickListener.class)
+    @Event(value = R.id.view_animation, type = View.OnClickListener.class)
     private void click_1(View view) {
-        Animation animation = AnimationUtils.loadAnimation(AnimationActivity.this,R.anim.view_anim);
+        Animation animation = AnimationUtils.loadAnimation(AnimationActivity.this, R.anim.view_anim);
         // 启动动画
         show.startAnimation(animation);
     }
@@ -83,7 +101,7 @@ public class AnimationActivity extends baseActivity {
         Frame refresh delay：帧刷新延迟，对于你的动画，多久刷新一次帧；默认为10ms，基本不用管。
         */
 
-    @Event(value = R.id.ObjectAnimator,type = View.OnClickListener.class)
+    @Event(value = R.id.ObjectAnimator, type = View.OnClickListener.class)
     private void click_2(View view) {
         /*  对于ObjectAnimator
             1、提供了ofInt、ofFloat、ofObject，这几个方法都是设置动画作用的元素、作用的属性、动画开始、结束、以及中间的任意个属性值。
@@ -91,7 +109,7 @@ public class AnimationActivity extends baseActivity {
         /*ofFloat()方法的第一个参数表示动画操作的对象，
          第二个参数表示操作对象的属性名字（只要是对象有的属性都可以,例如：alpha，otationX，scaleX），
          第三个参数之后就是动画过渡值。当然过度值可以有一个到N个，如果是一个值的话默认这个值是动画过渡值的结束值。如果有N个值，动画就在这N个值之间过渡。*/
-        ObjectAnimator animator = ObjectAnimator.ofFloat(show, "alpha",1.0f, 0.3f, 1.0F).setDuration(500);
+        ObjectAnimator animator = ObjectAnimator.ofFloat(show, "alpha", 1.0f, 0.3f, 1.0F).setDuration(500);
 
         animator.setDuration(2000);                         //设置动画执行时间
         animator.setInterpolator(new BounceInterpolator()); //设置动画插值
@@ -103,7 +121,7 @@ public class AnimationActivity extends baseActivity {
     }
 
 
-    @Event(value = R.id.ValueAnimator,type = View.OnClickListener.class)
+    @Event(value = R.id.ValueAnimator, type = View.OnClickListener.class)
     private void click_3(View view) {
 
 
@@ -127,11 +145,10 @@ public class AnimationActivity extends baseActivity {
         valueAnimator.setDuration(3000);
         valueAnimator.setObjectValues(new PointF(0, 0));
         valueAnimator.setInterpolator(new LinearInterpolator());
-        valueAnimator.setEvaluator(new TypeEvaluator<PointF>(){
+        valueAnimator.setEvaluator(new TypeEvaluator<PointF>() {
             @Override
             public PointF evaluate(float fraction, PointF startValue,
-                                   PointF endValue)
-            {
+                                   PointF endValue) {
                 Log.e("TAG", fraction * 3 + "");
                 // x方向200px/s ，则y方向0.5 * 10 * t
                 PointF point = new PointF();
@@ -141,24 +158,22 @@ public class AnimationActivity extends baseActivity {
             }
         });
 
-        valueAnimator.start();
-        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener()
-        {
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
-            public void onAnimationUpdate(ValueAnimator animation)
-            {
+            public void onAnimationUpdate(ValueAnimator animation) {
                 PointF point = (PointF) animation.getAnimatedValue();
                 mBlueBall.setX(point.x);
                 mBlueBall.setY(point.y);
 
             }
         });
+        valueAnimator.start();
 
 
     }
 
 
-    @Event(value = R.id.AnimatorSet,type = View.OnClickListener.class)
+    @Event(value = R.id.AnimatorSet, type = View.OnClickListener.class)
     private void click_4(View view) {
         /*组合动画有两种方式，
              一种是通过AnimatorSet：
@@ -169,7 +184,7 @@ public class AnimationActivity extends baseActivity {
         */
         ObjectAnimator animator = ObjectAnimator.ofInt(container, "backgroundColor", 0xFFFF0000, 0xFFFF00FF);
         ObjectAnimator animator1 = ObjectAnimator.ofFloat(show, "translationX", 0.0f, 200.0f, 0f);
-        ObjectAnimator animator2 = ObjectAnimator.ofFloat(show, "scaleX", 1.0f, 2.0f,1.0f);
+        ObjectAnimator animator2 = ObjectAnimator.ofFloat(show, "scaleX", 1.0f, 2.0f, 1.0f);
         ObjectAnimator animator3 = ObjectAnimator.ofFloat(show, "rotationX", 0.0f, 90.0f, 0.0F);
         ObjectAnimator animator4 = ObjectAnimator.ofFloat(show, "alpha", 1.0f, 0.2f, 1.0F);
         AnimatorSet set = new AnimatorSet();
@@ -199,11 +214,11 @@ public class AnimationActivity extends baseActivity {
     /*
     * 三，《布局动画》：主要使用LayoutTransition为布局的容器设置动画，当容器中的视图层次发生变化时存在过渡的动画效果。
     * */
-    @Event(value = R.id.layout_animations,type = View.OnClickListener.class)
+    @Event(value = R.id.layout_animations, type = View.OnClickListener.class)
     private void click_5(View view) {
         Intent intent = new Intent();
-        intent.setClass(AnimationActivity.this,LayoutAniActivity.class);
-        jump(AnimationActivity.this,intent,false);
+        intent.setClass(AnimationActivity.this, LayoutAniActivity.class);
+        jump(AnimationActivity.this, intent, false);
     }
 
 

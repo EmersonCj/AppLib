@@ -10,8 +10,10 @@ import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import lib.emerson.com.emersonapplib.R;
@@ -26,7 +28,7 @@ public class SideBar extends View {
             "W", "X", "Y", "Z", "#" };
     private int choose = -1;// 选中
     private Paint paint = new Paint();
-
+    private float currentY = -1;
     private TextView mTextDialog;
 
     /**
@@ -87,7 +89,7 @@ public class SideBar extends View {
         final int oldChoose = choose;
         final OnTouchingLetterChangedListener listener = onTouchingLetterChangedListener;
         final int c = (int) (y / getHeight() * b.length);// 点击y坐标所占总高度的比例*b数组的长度就等于点击b中的个数.
-
+        currentY = y;
         switch (action) {
             case MotionEvent.ACTION_UP:
                 setBackgroundDrawable(new ColorDrawable(0x00000000));
@@ -138,6 +140,10 @@ public class SideBar extends View {
      */
     public interface OnTouchingLetterChangedListener {
         public void onTouchingLetterChanged(String s);
+    }
+
+    public float getY(){
+        return currentY;
     }
 
 }

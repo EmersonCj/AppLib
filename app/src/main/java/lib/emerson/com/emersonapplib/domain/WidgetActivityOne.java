@@ -4,19 +4,15 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import lib.emerson.com.emersonapplib.R;
-import lib.emerson.com.emersonapplib.adapter.HorizontalScrollViewAdapter;
+import lib.emerson.com.emersonapplib.Adapter.HorizontalScrollViewAdapter;
 import lib.emerson.com.emersonapplib.view.MyHorizontalScrollView;
 
 /**

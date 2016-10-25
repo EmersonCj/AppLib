@@ -4,13 +4,18 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentActivity;
 import android.view.Gravity;
+import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.umeng.analytics.MobclickAgent;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.builder.GetBuilder;
 import com.zhy.http.okhttp.builder.PostFormBuilder;
@@ -91,7 +96,24 @@ public class baseActivity extends FragmentActivity {
         activityList.add(this);
         myapp= (MyApplication) getApplication();
         context=this;
+        initStatusLan();
         super.onCreate(savedInstanceState);
+    }
+
+    /*
+    * 将手机手机状态栏透明化
+    * */
+    private void initStatusLan() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {    //5.0及以上
+            View decorView = getWindow().getDecorView();
+            int option = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
+            decorView.setSystemUiVisibility(option);
+            getWindow().setStatusBarColor(Color.TRANSPARENT);
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {   //4.4到5.0
+            WindowManager.LayoutParams localLayoutParams = getWindow().getAttributes();
+            localLayoutParams.flags = (WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS | localLayoutParams.flags);
+        }
     }
 
     /**
@@ -197,18 +219,16 @@ public class baseActivity extends FragmentActivity {
         }
     }
 
-    public void toast(String text){
-        Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
-    }
+
 
 
     private static Toast toast;
     /*
     * 避免多次弹出Toast   (Toast居中显示)
     * */
-    public static void showToast(Context context,String content) {
+    public void toast(String content) {
         if (toast == null) {
-            toast = Toast.makeText(context,content,Toast.LENGTH_SHORT);
+            toast = Toast.makeText(this,content,Toast.LENGTH_SHORT);
         } else {
             toast.setText(content);
             toast.setGravity(Gravity.CENTER, 0, 0);
@@ -231,4 +251,15 @@ public class baseActivity extends FragmentActivity {
         return sb.toString();
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
 }

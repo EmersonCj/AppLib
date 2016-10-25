@@ -1,11 +1,15 @@
 package lib.emerson.com.emersonapplib.App;
 
+import android.app.ActivityManager;
 import android.app.Application;
 import android.app.Service;
+import android.content.Context;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Environment;
 import android.os.Vibrator;
 import android.util.Log;
+import android.widget.ImageView;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
@@ -14,7 +18,11 @@ import com.baidu.location.LocationClientOption;
 import com.baidu.location.Poi;
 import com.baidu.mapapi.SDKInitializer;
 import com.baidu.mapapi.model.LatLng;
+import com.hyphenate.chat.EMClient;
+import com.hyphenate.chat.EMOptions;
+import com.nostra13.universalimageloader.cache.disc.impl.FileCountLimitedDiscCache;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
+import com.nostra13.universalimageloader.cache.memory.impl.LruMemoryCache;
 import com.nostra13.universalimageloader.cache.memory.impl.UsingFreqLimitedMemoryCache;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -26,9 +34,11 @@ import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
 
 import org.xutils.DbManager;
 import org.xutils.common.util.LogUtil;
+import org.xutils.image.ImageOptions;
 import org.xutils.x;
 
 import java.io.File;
+import java.util.Iterator;
 import java.util.List;
 
 import lib.emerson.com.emersonapplib.R;
@@ -41,6 +51,8 @@ import lib.emerson.com.emersonapplib.service.LocationService;
 public class MyApplication extends Application {
     public static MyApplication mMyApplication;
     public static DbManager.DaoConfig daoConfig;
+    public  static ImageOptions imageoptions;
+    private Context mContext;
 
     /** 百度地图用来实现定位功能的“客户端”*/
     public LocationClient mLocationClient;
@@ -52,19 +64,71 @@ public class MyApplication extends Application {
     public MyLocationListener mLocationListener = new MyLocationListener();
 
     /**定位得到的最终点（经纬度）*/
-    public LatLng lastPoint;
+    public  LatLng lastPoint;
     public  BDLocation mlocation;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        // 初始化xUtils
+        // 初始化xUtils的注解模块
         x.Ext.init(this);
         x.Ext.setDebug(true);               // 设置是否输出debug
-        //初始化ImagerLoader
-        initImagerLoader();
+        initXUtilsBitmap();
+        mContext = this;
+        initImagerLoader();     //初始化ImagerLoader
         initDb();       //初始化数据库
         initBaiduMap();
+        initEase();     //初始化环信
+    }
+
+
+    public static  ImageOptions getImageOptions(){
+        return imageoptions;
+    }
+
+    private void initXUtilsBitmap() {
+        // 设置加载图片的参数
+         imageoptions = new ImageOptions.Builder()
+                .setIgnoreGif(false)        // 是否忽略GIF格式的图片
+                .setUseMemCache(true)       //设置使用缓存
+                .setCircular(true)          //设置显示圆形图片
+                .setImageScaleType(ImageView.ScaleType.FIT_XY)  // 图片缩放模式
+                .setLoadingDrawableId(R.drawable.loadlose)      // 下载中显示的图片
+                .setFailureDrawableId(R.drawable.loadlose)      // 下载失败显示的图片
+                 .build();   // 得到ImageOptions对象
+
+                 //.setSquare(true) //设置图片显示为正方形
+                 //setCrop(true).setSize(200,200) //设置大小
+                 //.setAnimation(animation) //设置动画
+                 //.setFailureDrawable(Drawable failureDrawable) //设置加载失败的动画
+                 //.setFailureDrawableId(int failureDrawable) //以资源id设置加载失败的动画
+                 //.setLoadingDrawable(Drawable loadingDrawable) //设置加载中的动画
+                 //.setLoadingDrawableId(int loadingDrawable) //以资源id设置加载中的动画
+                 //.setRaduis(int raduis) //设置拐角弧度
+                 //.setUseMemCache(true) //设置使用MemCache，默认true
+
+    }
+
+
+    private void initEase() {
+        EMOptions options = new EMOptions();
+        options.setAcceptInvitationAlways(false);           // 默认添加好友时，是不需要验证的，现在改成需要验证
+        //初始化
+        EMClient.getInstance().init(mContext, options);
+        EMClient.getInstance().setDebugMode(true);          //在做打包混淆时，关闭debug模式，避免消耗不必要的资源
+
+        int pid = android.os.Process.myPid();
+        String processAppName = getAppName(pid);
+        // 如果APP启用了远程的service，此application:onCreate会被调用2次
+        // 为了防止环信SDK被初始化2次，加此判断会保证SDK被初始化1次
+        // 默认的APP会在以包名为默认的process name下运行，如果查到的process name不是APP的process name就立即返回
+        if (processAppName == null ||!processAppName.equalsIgnoreCase(mContext.getPackageName())) {
+            Log.e("TAG", "enter the service process!");
+            // 则此application::onCreate 是被service 调用的，直接返回
+            return;
+        }
+
+
     }
 
     /**
@@ -164,6 +228,9 @@ public class MyApplication extends Application {
         return daoConfig;
     }
 
+
+
+
     /**
      * 初始化ImageLoader框架的对象,并设置
      */
@@ -179,31 +246,54 @@ public class MyApplication extends Application {
                 .bitmapConfig(Bitmap.Config.RGB_565)
                 .imageScaleType(ImageScaleType.EXACTLY) //图片的缩放方式
                 .displayer(new FadeInBitmapDisplayer(100))//设置图片渐显的时间
-                //==.FadeInBitmapDisplayer()//设置图片渐显的时间
                 // .SimpleBitmapDisplayer()//正常显示一张图片
                 // .displayer(new SimpleBitmapDisplayer())//设置正常显示一张图片
                 .build();
 
         //ImageLoader的配置参数
-        ImageLoaderConfiguration config =new ImageLoaderConfiguration.Builder(getApplicationContext())
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(getApplicationContext())
                 .threadPoolSize(5)//设置线程数量一般1-5最好
                 .denyCacheImageMultipleSizesInMemory()
                 .threadPriority(Thread.MAX_PRIORITY-2)  //线程的优先级
                 .tasksProcessingOrder(QueueProcessingType.FIFO) // default
                 .memoryCacheExtraOptions(480, 800)  //缓存的最大宽高
-                .memoryCache(new UsingFreqLimitedMemoryCache(2*1024*1024))  //自定义内存缓存，如果出现内存溢出可以不添加
+                .memoryCache(new LruMemoryCache(2*1024*1024))       //自定义内存缓存，如果出现内存溢出可以不添加(也可以使用下面那个)
+                //.memoryCache(new UsingFreqLimitedMemoryCache(2*1024*1024))
                 .memoryCacheSize(2*1024*1024)       //最大的缓存数量
+                //.discCache(new FileCountLimitedDiscCache())
                 .discCacheSize(50 * 1024 * 1024)    // 50 Mb sd卡(本地)缓存的最大值
-                // .diskCacheFileCount(100)  // 可以缓存的文件数量
                 .discCacheFileNameGenerator(new Md5FileNameGenerator())//加密
-                .defaultDisplayImageOptions(dconfig)//设置默认情况下的Option
+                .defaultDisplayImageOptions(dconfig)    //设置默认情况下的Option,使用上面配置好的dconfig
                 .imageDownloader(new BaseImageDownloader(getApplicationContext(), 5 * 1000, 30 * 1000))
+                //.writeDebugLogs() //打印log信息
                 .build(); // connectTimeout (5 s),
+
+        //初始化imageloader配置
         ImageLoader
                 .getInstance()
                 .init(config);
         com.nostra13.universalimageloader.utils.L.disableLogging();
         com.nostra13.universalimageloader.utils.L.enableLogging();
+    }
+
+    private String getAppName(int pID) {
+        String processName = null;
+        ActivityManager am = (ActivityManager) this.getSystemService(ACTIVITY_SERVICE);
+        List l = am.getRunningAppProcesses();
+        Iterator i = l.iterator();
+        PackageManager pm = this.getPackageManager();
+        while (i.hasNext()) {
+            ActivityManager.RunningAppProcessInfo info = (ActivityManager.RunningAppProcessInfo) (i.next());
+            try {
+                if (info.pid == pID) {
+                    processName = info.processName;
+                    return processName;
+                }
+            } catch (Exception e) {
+                // Log.e("Process", "Error>> :"+ e.toString());
+            }
+        }
+        return processName;
     }
 
 

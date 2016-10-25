@@ -35,12 +35,15 @@
         android:visibility="gone"
         android:background="#9AC94A"
         android:id="@+id/dialog"
-        android:gravity="center"
-        android:textSize="50sp"
+        android:textSize="25sp"
         android:textColor="#fff"
-        android:layout_centerInParent="true"
-        android:layout_width="100dp"
-        android:layout_height="100dp" />
+        android:gravity="center"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_toLeftOf="@+id/sidebar"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        />
 
 
 </RelativeLayout>

@@ -7,6 +7,7 @@
         <item name="colorPrimary">@color/md_blue_500_color_code</item>
         <item name="colorPrimaryDark">@color/md_blue_500_color_code</item>
         <item name="colorAccent">@color/md_green_50_color_code</item>
+        <item name="android:fitsSystemWindows">true</item>
 
     </style>
 
@@ -16,7 +17,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/colorAccent</item>      <!--让布局不延伸到状态栏-->
     </style>
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
@@ -281,12 +282,12 @@
         <item name="android:background">@drawable/btn_selector</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">40dp</item>
-        <item name="android:layout_marginLeft">@dimen/dp_value_50</item>
-        <item name="android:layout_marginRight">@dimen/dp_value_50</item>
+        <item name="android:layout_marginLeft">@dimen/dp_value_30</item>
+        <item name="android:layout_marginRight">@dimen/dp_value_30</item>
         <item name="android:layout_marginTop">@dimen/dp_value_10</item>
         <item name="android:layout_marginBottom">@dimen/dp_value_10</item>
         <item name="android:textSize">@dimen/dp_value_16</item>
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">@color/mm_btn_text</item>
         <item name="android:gravity">center</item>
     </style>
 
@@ -302,7 +303,12 @@
         <item name="android:layout_width">@dimen/line_height</item>
     </style>
 
-
+    <!-- 仿应用宝下载进度条-->
+    <declare-styleable name="FlikerProgressBar">
+        <attr name="loadtextSize" format="dimension|reference"/>
+        <attr name="loadingColor" format="color|reference"/>
+        <attr name="stopColor" format="color|reference"/>
+    </declare-styleable>
 
 
 </resources>

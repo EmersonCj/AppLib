@@ -32,6 +32,27 @@
         style="@style/btn_style"
         android:text="音量控制器"/>
 
+    <Button
+        android:layout_below="@+id/layout_my_custom_tv_three"
+        android:layout_marginTop="10dp"
+        android:id="@+id/layout_my_custom_tv_four"
+        style="@style/btn_style"
+        android:text="android 开关键"/>
+
+    <Button
+        android:layout_below="@+id/layout_my_custom_tv_four"
+        android:layout_marginTop="10dp"
+        android:id="@+id/layout_my_custom_tv_five"
+        style="@style/btn_style"
+        android:text="贝赛尔曲线使用"/>
+
+    <Button
+        android:layout_below="@+id/layout_my_custom_tv_five"
+        android:layout_marginTop="10dp"
+        android:id="@+id/layout_my_custom_tv_six"
+        style="@style/btn_style"
+        android:text="高仿应用宝下载进度条"/>
+
     <lib.emerson.com.emersonapplib.view.CustomTitleView
         android:id="@+id/layout_my_custom_view_one"
         android:visibility="gone"
@@ -63,12 +84,19 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginTop="20dp"
-
         zhy:bg="@drawable/volume"
         zhy:circlewidth="12dp"
         zhy:dotCount="20"
         zhy:firstcolor="#252420"
         zhy:secondcolor="#FDFDFD"
         zhy:splitSize="25" />
+
+    <lib.emerson.com.emersonapplib.view.CheckSwitchButton
+        android:visibility="gone"
+        android:id="@+id/mEnableCheckSwithcButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center" />
+
 
 </RelativeLayout>

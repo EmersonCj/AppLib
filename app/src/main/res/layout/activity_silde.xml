@@ -45,5 +45,15 @@
         android:onClick="onClick"
         android:text="简单（SweepView）" />
 
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:onClick="onClick"
+        android:text="自定义ViewGropup 实现侧滑动作" />
+
 
 </LinearLayout>

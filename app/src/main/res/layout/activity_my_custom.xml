@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/id_my_custom_bt_one"
+        style="@style/btn_style"
+        android:text="自定义View"/>
+
+    <Button
+        android:id="@+id/id_my_custom_bt_two"
+        style="@style/btn_style"
+        android:text="自定义ViewGroup"/>
+
+</LinearLayout>

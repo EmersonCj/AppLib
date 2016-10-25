@@ -4,7 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/scrollView_bt_one"
+        style="@style/btn_style"
+        android:text="正常使用"/>
+
+    <Button
+        android:id="@+id/scrollView_bt_two"
+        style="@style/btn_style"
+        android:text="顶部悬停"/>
+
+
     <ScrollView
+        android:id="@+id/layout_scrollView"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

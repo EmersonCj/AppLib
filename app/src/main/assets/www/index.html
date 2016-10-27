@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Android开发进阶_Android讨论_Android开发学习 -  Powered by Discuz!</title>
+	<link rel="search" type="application/opensearchdescription+xml" href="http://www.eoeandroid.com/open-search.xml" title="eoeAndroid">
+	<script type="text/javascript" charset="utf-8" src="http://tcss.qq.com/heatmap/87/NzM3OTY4Nw==.js?rand=26544300"></script><script src="static/js/code/scripts/brush.js" type="text/javascript"></script>
+	<link type="text/css" rel="stylesheet" href="static/js/code/styles/shCore.css">
+	<link type="text/css" rel="stylesheet" href="static/js/code/styles/shThemeDefault.css">
+	<script type="text/javascript">
+SyntaxHighlighter.config.clipboardSwf = 'static/js/code//scripts/clipboard.swf';
+SyntaxHighlighter.all();
+</script>
+	<meta name="keywords" content="Android开发学习,android开发交流,Android讨论,android开发进阶">
+	<meta name="description" content="Android开发进阶，Android经验分享是android开发者最常交流的话题，本版块有关Android开发进阶，Android讨论和Android研究，android代码，android原理，Activity，Service，Widget等Android开发进阶知识分享讨论积极活跃！ ">
+	<meta name="generator" content="Discuz! X3.2">
+	<meta name="author" content="Discuz! Team and Comsenz UI Team">
+	<meta name="copyright" content="2001-2013 Comsenz Inc.">
+	<meta name="MSSmartTagsPreventParsing" content="True">
+	<meta http-equiv="MSThemeCompatible" content="Yes">
+	<base href="http://www.eoeandroid.com/"><link rel="stylesheet" type="text/css" href="data/cache/style_1_common.css?fa1"><link rel="stylesheet" type="text/css" href="data/cache/style_1_forum_forumdisplay.css?fa1"><script type="text/javascript">var STYLEID = '1', STATICURL = 'static/', IMGDIR = 'static/image/common', VERHASH = 'fa1', charset = 'utf-8', discuz_uid = '3005242', cookiepre = 'M9xo_2132_', cookiedomain = '', cookiepath = '/', showusercard = '1', attackevasive = '0', disallowfloat = 'newthread|viewvote|tradeorder|activity|debate|usergroups|task', creditnotice = '1|e望|点,2|体力|个,4|e币|元', defaultstyle = '', REPORTURL = 'aHR0cDovL3d3dy5lb2VhbmRyb2lkLmNvbS9mb3J1bS05My00Lmh0bWw=', SITEURL = 'http://www.eoeandroid.com/', JSPATH = 'http://s1.eoeandroid.com/js/', CSSPATH = 'data/cache/style_', DYNAMICURL = '';</script>
+	<script src="http://s1.eoeandroid.com/js/common.js?fa1" type="text/javascript"></script>
+	<meta name="application-name" content="eoe 移动开发者论坛">
+	<meta name="msapplication-tooltip" content="eoe 移动开发者论坛">
+	<meta name="msapplication-task" content="name=首页;action-uri=http://www.eoeandroid.com/portal.php;icon-uri=http://www.eoeandroid.com/static/image/common/portal.ico"><meta name="msapplication-task" content="name=社区;action-uri=http://www.eoeandroid.com/forum.php;icon-uri=http://www.eoeandroid.com/static/image/common/bbs.ico">
+	<meta name="msapplication-task" content="name=群组;action-uri=http://www.eoeandroid.com/group.php;icon-uri=http://www.eoeandroid.com/static/image/common/group.ico"><meta name="msapplication-task" content="name=;action-uri=http://www.eoeandroid.com/home.php;icon-uri=http://www.eoeandroid.com/static/image/common/home.ico"><link rel="archives" title="eoe 移动开发者论坛" href="http://www.eoeandroid.com/archiver/">
+	<link rel="alternate" type="application/rss+xml" title="eoe 移动开发者论坛 - 安卓开发_安卓开发论坛_Android开发_Android论坛" href="http://www.eoeandroid.com/forum.php?mod=rss&amp;fid=93&amp;auth=b9fcNBmHOI6TSxdnQJslRoVDWS5gl0J0EaEVQYFMZ0nWTkwoQYUXGFNrjGnUE6WM">
+	<script src="http://s1.eoeandroid.com/js/forum.js?fa1" type="text/javascript"></script>
+	<script type="text/javascript" id="odYmFIKnolRJkbIIfmhXiencYFOYYKII" charset="UTF-8" src="http://s1.eoeandroid.com/js/common_extra.js?fa1"></script><link rel="stylesheet" href="http://static.geetest.com/static/golden/style.3.0.23.css"><script type="text/javascript" id="seqaajs_qSI8SLl5" src="misc.php?mod=secqaa&amp;action=update&amp;idhash=qSI8SLl5&amp;0.011268199188634753"></script><script charset="UTF-8" src="http://api.geetest.com/refresh.php?challenge=540143a518c006cf52b2479e29c182c7l6&amp;gt=d1e176aedb3fce6647a8a86ea278b1f8&amp;callback=geetest_1475734133443"></script><script charset="UTF-8" src="http://api.geetest.com/refresh.php?challenge=69acd440585caaef441a5ce9d6b97568ln&amp;gt=d1e176aedb3fce6647a8a86ea278b1f8&amp;callback=geetest_1475734126293"></script><script charset="UTF-8" src="http://api.geetest.com/refresh.php?challenge=540143a518c006cf52b2479e29c182c7as&amp;gt=d1e176aedb3fce6647a8a86ea278b1f8&amp;callback=geetest_1475734670972"></script><script charset="UTF-8" src="http://api.geetest.com/refresh.php?challenge=69acd440585caaef441a5ce9d6b97568cz&amp;gt=d1e176aedb3fce6647a8a86ea278b1f8&amp;callback=geetest_1475734666680"></script><script charset="UTF-8" src="http://api.geetest.com/refresh.php?challenge=540143a518c006cf52b2479e29c182c7hk&amp;gt=d1e176aedb3fce6647a8a86ea278b1f8&amp;callback=geetest_1475735214407"></script><script charset="UTF-8" src="http://api.geetest.com/refresh.php?challenge=69acd440585caaef441a5ce9d6b97568kp&amp;gt=d1e176aedb3fce6647a8a86ea278b1f8&amp;callback=geetest_1475735210212"></script><script charset="UTF-8" src="http://api.geetest.com/refresh.php?challenge=69acd440585caaef441a5ce9d6b97568d1&amp;gt=d1e176aedb3fce6647a8a86ea278b1f8&amp;callback=geetest_1475735752111"></script><script charset="UTF-8" src="http://api.geetest.com/refresh.php?challenge=540143a518c006cf52b2479e29c182c7ju&amp;gt=d1e176aedb3fce6647a8a86ea278b1f8&amp;callback=geetest_1475735752620"></script><script charset="UTF-8" src="http://api.geetest.com/refresh.php?challenge=69acd440585caaef441a5ce9d6b97568dd&amp;gt=d1e176aedb3fce6647a8a86ea278b1f8&amp;callback=geetest_1475736293131"></script><script charset="UTF-8" src="http://api.geetest.com/refresh.php?challenge=540143a518c006cf52b2479e29c182c79r&amp;gt=d1e176aedb3fce6647a8a86ea278b1f8&amp;callback=geetest_1475736293322"></script><script charset="UTF-8" src="http://api.geetest.com/refresh.php?challenge=540143a518c006cf52b2479e29c182c7ls&amp;gt=d1e176aedb3fce6647a8a86ea278b1f8&amp;callback=geetest_1475736835549"></script><script charset="UTF-8" src="http://api.geetest.com/refresh.php?challenge=69acd440585caaef441a5ce9d6b97568j1&amp;gt=d1e176aedb3fce6647a8a86ea278b1f8&amp;callback=geetest_1475736836418"></script><script charset="UTF-8" src="http://api.geetest.com/refresh.php?challenge=540143a518c006cf52b2479e29c182c7dt&amp;gt=d1e176aedb3fce6647a8a86ea278b1f8&amp;callback=geetest_1475737380533"></script><script charset="UTF-8" src="http://api.geetest.com/refresh.php?challenge=69acd440585caaef441a5ce9d6b975689r&amp;gt=d1e176aedb3fce6647a8a86ea278b1f8&amp;callback=geetest_1475737372960"></script><script charset="UTF-8" src="http://api.geetest.com/refresh.php?challenge=540143a518c006cf52b2479e29c182c7kn&amp;gt=d1e176aedb3fce6647a8a86ea278b1f8&amp;callback=geetest_1475737921096"></script><script charset="UTF-8" src="http://api.geetest.com/refresh.php?challenge=69acd440585caaef441a5ce9d6b97568d5&amp;gt=d1e176aedb3fce6647a8a86ea278b1f8&amp;callback=geetest_1475737918947"></script><script charset="UTF-8" src="http://api.geetest.com/refresh.php?challenge=540143a518c006cf52b2479e29c182c775&amp;gt=d1e176aedb3fce6647a8a86ea278b1f8&amp;callback=geetest_1475738456817"></script><script charset="UTF-8" src="http://api.geetest.com/refresh.php?challenge=69acd440585caaef441a5ce9d6b975683j&amp;gt=d1e176aedb3fce6647a8a86ea278b1f8&amp;callback=geetest_1475738455422"></script><script charset="UTF-8" src="http://api.geetest.com/refresh.php?challenge=540143a518c006cf52b2479e29c182c73q&amp;gt=d1e176aedb3fce6647a8a86ea278b1f8&amp;callback=geetest_1475739002687"></script><script charset="UTF-8" src="http://api.geetest.com/refresh.php?challenge=69acd440585caaef441a5ce9d6b97568ci&amp;gt=d1e176aedb3fce6647a8a86ea278b1f8&amp;callback=geetest_1475738996996"></script><script charset="UTF-8" src="http://api.geetest.com/refresh.php?challenge=540143a518c006cf52b2479e29c182c7i0&amp;gt=d1e176aedb3fce6647a8a86ea278b1f8&amp;callback=geetest_1475739542873"></script><script charset="UTF-8" src="http://api.geetest.com/refresh.php?challenge=69acd440585caaef441a5ce9d6b97568kr&amp;gt=d1e176aedb3fce6647a8a86ea278b1f8&amp;callback=geetest_1475739536955"></script></head>
+
+<body id="nv_forum" class="pg_forumdisplay" onkeydown="if(event.keyCode==27) return false;">
+<div id="append_parent"><div id="typeid_fast_ctrl_menu" class="sltm" style="display: none; width: 80px;"><ul><li class="current">选择主题分类</li><li>Android分享</li><li>Android讨论</li><li>程序猿感悟</li><li>在线课堂讨论</li></ul></div></div><div id="ajaxwaitid"></div>
+<div id="toptb" class="cl">
+	<div class="wp">
+		<div class="z"><a href="http://www.eoeandroid.com/portal.php">首页</a><a href="http://www.eoeandroid.com/forum.php">Android开发者社区</a><a href="http://wiki.eoeandroid.com/" target="_blank">Android百科</a><a href="http://www.jikexueyuan.com/?hmsr=eoe_dbdh_index" target="_blank">极客学院</a><script type="text/javascript">var _speedMark = new Date();</script></div>
+		<div class="y">
+			<a id="switchblind" href="javascript:;" onclick="toggleBlind(this)" title="开启辅助访问" class="switchblind">开启辅助访问</a>
+			<a href="http://www.eoeandroid.com/plugin.php?id=dsu_paulsign:sign" style="color: red">打卡签到</a><a href="http://www.eoeandroid.com/thread-558384-1-1.html" style="color: blue">我要上头条</a><a href="http://www.eoeandroid.com/thread-194200-1-1.html" style="color: green">如何赚e币</a><a href="http://www.eoeandroid.com/thread-289175-1-1.html" title="QQ游客和邮箱验证的问题" style="color: blue">注册验证问题</a><a href="http://www.eoeandroid.com/thread-554818-1-1.html" style="color: red">版主申请</a><a href="javascript:;" id="switchwidth" onclick="widthauto(this)" title="切换到宽版" class="switchwidth">切换到宽版</a>
+			<a id="sslct" href="javascript:;" onmouseover="delayShow(this, function() {showMenu({'ctrlid':'sslct','pos':'34!'})});">切换风格</a></div>
+	</div>
+</div>
+
+<ul id="myprompt_menu" class="p_pop" style="display: none;">
+	<li><a href="home.php?mod=space&amp;do=pm" id="pm_ntc" style="background-repeat: no-repeat; background-position: 0 50%;"><em class="prompt_news_0"></em>消息</a></li>
+	<li><a href="home.php?mod=follow&amp;do=follower"><em class="prompt_follower_0"></em>新听众</a></li>
+	<li class="ignore_noticeli"><a href="javascript:;" onclick="setcookie('ignore_notice', 1);hideMenu('myprompt_menu')" title="暂不提醒"><em class="ignore_notice"></em></a></li>
+</ul>
+<div id="sslct_menu" class="cl p_pop" style="display: none;">
+	<span class="sslct_btn" onclick="extstyle('')" title="默认"><i></i></span><span class="sslct_btn" onclick="extstyle('./template/default/style/t1')" title="红"><i style="background:#BA350F"></i></span>
+	<span class="sslct_btn" onclick="extstyle('./template/default/style/t4')" title="紫"><i style="background:#9934B7"></i></span>
+	<span class="sslct_btn" onclick="extstyle('./template/default/style/t2')" title="青"><i style="background:#429296"></i></span>
+	<span class="sslct_btn" onclick="extstyle('./template/default/style/t3')" title="橙"><i style="background:#FE9500"></i></span>
+	<span class="sslct_btn" onclick="extstyle('./template/default/style/t5')" title="蓝"><i style="background:#0053B9"></i></span>
+</div>
+<ul id="myitem_menu" class="p_pop" style="display: none;">
+	<li><a href="forum.php?mod=guide&amp;view=my">帖子</a></li>
+	<li><a href="home.php?mod=space&amp;do=favorite&amp;view=me">收藏</a></li>
+	<li><a href="home.php?mod=space&amp;do=friend">好友</a></li>
+</ul>
+<div id="qmenu_menu" class="p_pop " style="display: none;">
+	<ul class="cl nav"><li><a href="forum.php?mod=guide&amp;view=my" style="background-image:url(http://www.eoeandroid.com/static/image/feed/thread_b.png) !important">我的帖子</a></li>
+		<li><a href="home.php?mod=space&amp;do=favorite&amp;view=me" style="background-image:url(http://www.eoeandroid.com/static/image/feed/favorite_b.png) !important">我的收藏</a></li>
+		<li><a href="forum.php?mod=guide&amp;view=new" target="_blank" style="background-image:url(http://a1.eoeandroid.com/attachment/common/cf/111009rcrn6e6n0e0c9065.png?z8Z18s) !important">查看新帖</a></li>
+		<li><a href="forum.php?mod=collection&amp;op=my" style="background-image:url(http://www.eoeandroid.com/static/image/feed/collection_b.png) !important">淘帖</a></li>
+		<li><a href="home.php?mod=medal" style="background-image:url(http://www.eoeandroid.com/static/image/feed/medal_b.png) !important">勋章</a></li>
+		<li><a href="home.php?mod=task" style="background-image:url(http://www.eoeandroid.com/static/image/feed/task_b.png) !important">任务</a></li>
+		<li><a href="forum.php?mod=guide" style="background-image:url(http://www.eoeandroid.com/static/image/feed/guide_b.png) !important">导读</a></li>
+		<li><a href="misc.php?mod=ranklist" style="background-image:url(http://www.eoeandroid.com/static/image/feed/ranklist_b.png) !important">排行榜</a></li>
+	</ul>
+	<div id="fjump_menu" class="btda"></div></div><div id="hd">
+	<div class="wp">
+		<div class="hdc cl"><h2><a href="./" title="eoe 移动开发者论坛"><img src="static/image/common/eoe_logo.png" alt="eoe 移动开发者论坛" border="0"></a></h2><div id="um">
+			<div class="avt y"><a href="space-uid-3005242.html"><img src="http://www.eoeandroid.com/uc_server/avatar.php?uid=3005242&amp;size=small"></a></div>
+			<p>
+				<strong class="vwmy qq"><a href="space-uid-3005242.html" target="_blank" title="访问我的空间">MyCreate</a></strong>
+				<span class="pipe">|</span><a href="javascript:;" id="myitem" class="showmenu" onmouseover="showMenu({'ctrlid':'myitem'});">我的</a>
+				<span class="pipe">|</span><a href="home.php?mod=spacecp">设置</a>
+				<span class="pipe">|</span><a href="home.php?mod=space&amp;do=pm" id="pm_ntc">消息</a>
+				<span class="pipe">|</span><a href="home.php?mod=space&amp;do=notice" id="myprompt" class="a showmenu" onmouseover="showMenu({'ctrlid':'myprompt'});">提醒</a><span id="myprompt_check"></span>
+				<span class="pipe">|</span><a href="javascript:;" onclick="showWindow('dsu_paulsign', 'plugin.php?id=dsu_paulsign:sign&amp;4804b765')"><font color="red">签到领奖!</font></a> <span class="pipe">|</span><a href="member.php?mod=logging&amp;action=logout&amp;formhash=4804b765">退出</a>
+			</p>
+			<p>
+				<a href="home.php?mod=spacecp&amp;ac=credit&amp;showcredit=1" id="extcreditmenu" onmouseover="delayShow(this, showCreditmenu);" class="showmenu">积分: 17</a>
+				<span class="pipe">|</span><a href="home.php?mod=spacecp&amp;ac=usergroup" id="g_upmine" class="showmenu" onmouseover="delayShow(this, showUpgradeinfo)">用户组: No.1 码农</a>
+			</p>
+		</div>
+		</div>
+
+		<div id="nv" style="top: 0px; left: 456px; z-index: 199; border-left-width: 0px; border-right-width: 0px; height: 33px; width: 960px; position: fixed; opacity: 0.85;">
+			<a href="javascript:;" id="qmenu" onmouseover="delayShow(this, function () {showMenu({'ctrlid':'qmenu','pos':'34!','ctrlclass':'a','duration':2});showForummenu(93);})">快捷导航</a>
+			<ul><li id="mn_N95e0"><a href="http://www.eoeandroid.com/portal.php" hidefocus="true">首页</a></li><li class="a" id="mn_forum"><a href="forum.php" hidefocus="true" title="论坛">社区<span>论坛</span></a></li><li id="mn_N7b08"><a href="http://www.eoeandroid.com/forum-53-1.html" hidefocus="true">新手入门</a></li><li id="mn_Nd90d"><a href="http://www.eoeandroid.com/forum-27-1.html" hidefocus="true">实例教程</a></li><li id="mn_N79b5" onmouseover="showMenu({'ctrlid':this.id,'ctrlclass':'hover','duration':2})" initialized="true" class=""><a href="http://www.eoeandroid.com/forum.php?gid=180" hidefocus="true">资源下载</a></li><li id="mn_Necef"><a href="http://www.eoeandroid.com/forum.php?gid=121" hidefocus="true">游戏开发</a></li><li id="mn_Ne9d6"><a href="http://www.eoeandroid.com/topic-demo.html" hidefocus="true">Android源码</a></li><li id="mn_Nf7f5"><a href="http://www.eoeandroid.com/forum-26-1.html" hidefocus="true" title="Android高薪招聘">招聘<span>Android高薪招聘</span></a></li></ul>
+		</div>
+		<ul class="p_pop h_pop" id="plugin_menu" style="display: none">  <li><a href="dsu_paulsign-sign.html" id="mn_plink_sign">每日签到</a></li>
+		</ul>
+		<ul class="p_pop h_pop" id="mn_N79b5_menu" style="position: absolute; z-index: 301; left: 300px; top: 157px; display: none;" initialized="true" ctrlid="mn_N79b5" ctrlclass="hover"><li><a href="http://www.eoeandroid.com/topic-env.html" hidefocus="true" class="">Android开发环境搭建</a></li><li><a href="http://www.eoeandroid.com/forum-23-1.html" hidefocus="true">源码下载</a></li><li><a href="http://www.eoeandroid.com/forum-207-1.html" hidefocus="true">开源项目组件</a></li><li><a href="http://www.eoeandroid.com/forum-208-1.html" hidefocus="true">UI开发资源</a></li><li><a href="http://download.jikexueyuan.com/index/cate/android" hidefocus="true" target="_blank" style="font-weight: bold;">Android开发资料下载</a></li><li><a href="http://event.eoeandroid.com/umeng/" hidefocus="true" target="_blank">视频下载</a></li></ul><div class="p_pop h_pop" id="mn_userapp_menu" style="display: none"></div><div id="mu" class="cl">
+		<ul class="cl " id="snav_mn_userapp" style="display:none">
+		</ul>
+	</div><div id="scbar" class="scbar_narrow cl">
+		<form id="scbar_form" method="post" autocomplete="off" onsubmit="searchFocus($('scbar_txt'))" action="search.php?searchsubmit=yes" target="_blank">
+			<input type="hidden" name="mod" id="scbar_mod" value="forum">
+			<input type="hidden" name="formhash" value="4804b765">
+			<input type="hidden" name="srchtype" value="title">
+			<input type="hidden" name="srhfid" value="93">
+			<input type="hidden" name="srhlocality" value="forum::forumdisplay">
+			<table cellspacing="0" cellpadding="0">
+				<tbody><tr>
+					<td class="scbar_icon_td"></td>
+					<td class="scbar_txt_td"><input type="text" name="srchtxt" id="scbar_txt" value="请输入搜索内容" autocomplete="off" x-webkit-speech="" speech="" class=" xg1" placeholder="请输入搜索内容"></td>
+					<td class="scbar_type_td"><a href="javascript:;" id="scbar_type" class="xg1" onclick="showMenu(this.id)" hidefocus="true">帖子</a></td>
+					<td class="scbar_btn_td"><button type="submit" name="searchsubmit" id="scbar_btn" sc="1" class="pn pnc" value="true"><strong class="xi2">搜索</strong></button></td>
+					<td class="scbar_hot_td">
+						<div id="scbar_hot">
+							<strong class="xw1">热搜: </strong>
+
+							<a href="search.php?mod=forum&amp;srchtxt=%E4%BA%8C%E7%BB%B4%E7%A0%81&amp;formhash=4804b765&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" class="xi2" sc="1">二维码</a>
+
+
+
+							<a href="search.php?mod=forum&amp;srchtxt=%E5%AE%9A%E6%97%B6%E5%99%A8&amp;formhash=4804b765&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" class="xi2" sc="1">定时器</a>
+
+
+
+							<a href="search.php?mod=forum&amp;srchtxt=%E6%89%8B%E7%94%B5%E7%AD%92&amp;formhash=4804b765&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" class="xi2" sc="1">手电筒</a>
+
+
+
+							<a href="search.php?mod=forum&amp;srchtxt=%E6%BB%91%E5%9D%97&amp;formhash=4804b765&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" class="xi2" sc="1">滑块</a>
+
+
+
+							<a href="search.php?mod=forum&amp;srchtxt=%E6%96%97%E5%9C%B0%E4%B8%BB&amp;formhash=4804b765&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" class="xi2" sc="1">斗地主</a>
+
+
+
+							<a href="search.php?mod=forum&amp;srchtxt=%E4%B9%A6%E6%9E%B6&amp;formhash=4804b765&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" class="xi2" sc="1">书架</a>
+
+
+
+							<a href="search.php?mod=forum&amp;srchtxt=%E5%AE%9A%E4%BD%8D&amp;formhash=4804b765&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" class="xi2" sc="1">定位</a>
+
+
+
+							<a href="search.php?mod=forum&amp;srchtxt=%E4%B9%B0%E6%89%8B%E6%9C%BA&amp;formhash=4804b765&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" class="xi2" sc="1">买手机</a>
+
+
+
+							<a href="search.php?mod=forum&amp;srchtxt=%E8%81%8A%E5%A4%A9&amp;formhash=4804b765&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" class="xi2" sc="1">聊天</a>
+
+
+
+							<a href="search.php?mod=forum&amp;srchtxt=%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91&amp;formhash=4804b765&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" class="xi2" sc="1">游戏开发</a>
+
+
+
+							<a href="search.php?mod=forum&amp;srchtxt=%E6%B8%B8%E6%88%8F&amp;formhash=4804b765&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" class="xi2" sc="1">游戏</a>
+
+
+
+							<a href="search.php?mod=forum&amp;srchtxt=%E8%82%A1%E7%A5%A8%E6%9F%A5%E8%AF%A2&amp;formhash=4804b765&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" class="xi2" sc="1">股票查询</a>
+
+
+
+							<a href="search.php?mod=forum&amp;srchtxt=%E6%9C%BA%E9%A1%B6%E7%9B%92&amp;formhash=4804b765&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" class="xi2" sc="1">机顶盒</a>
+
+
+
+							<a href="search.php?mod=forum&amp;srchtxt=%E9%80%9A%E8%AF%9D%E8%AE%B0%E5%BD%95&amp;formhash=4804b765&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" class="xi2" sc="1">通话记录</a>
+
+
+
+							<a href="search.php?mod=forum&amp;srchtxt=%E4%BA%8C%E7%BB%B4%E7%A0%81%E6%89%AB%E6%8F%8F&amp;formhash=4804b765&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" class="xi2" sc="1">二维码扫描</a>
+
+
+
+							<a href="search.php?mod=forum&amp;srchtxt=%E6%8C%AF%E5%8A%A8%E5%99%A8&amp;formhash=4804b765&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" class="xi2" sc="1">振动器</a>
+
+
+
+							<a href="search.php?mod=forum&amp;srchtxt=listview&amp;formhash=4804b765&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" class="xi2" sc="1">listview</a>
+
+
+
+							<a href="search.php?mod=forum&amp;srchtxt=fragment&amp;formhash=4804b765&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" class="xi2" sc="1">fragment</a>
+
+
+
+							<a href="search.php?mod=forum&amp;srchtxt=%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8&amp;formhash=4804b765&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" class="xi2" sc="1">音乐播放器</a>
+
+
+
+							<a href="search.php?mod=forum&amp;srchtxt=%E6%92%AD%E6%94%BE%E5%99%A8&amp;formhash=4804b765&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" class="xi2" sc="1">播放器</a>
+
+						</div>
+					</td>
+				</tr>
+				</tbody></table>
+		</form>
+	</div>
+		<ul id="scbar_type_menu" class="p_pop" style="display: none;"><li><a href="javascript:;" rel="curforum" fid="93">本版</a></li><li><a href="javascript:;" rel="article">文章</a></li><li><a href="javascript:;" rel="forum" class="curtype">帖子</a></li><li><a href="javascript:;" rel="group">群组</a></li><li><a href="javascript:;" rel="user">用户</a></li></ul>
+		<script type="text/javascript">
+initSearchmenu('scbar', '');
+</script>
+	</div>
+</div>
+
+
+<div id="wp" class="wp">
+	<style id="diy_style" type="text/css"></style>
+	<!--[diy=diynavtop]--><div id="diynavtop" class="area"></div><!--[/diy]-->
+	<div id="pt" class="bm cl">
+		<div class="z">
+			<a href="./" class="nvhm" title="首页">eoe 移动开发者论坛</a><em>»</em><a href="forum.php">社区</a> <em>›</em> <a href="forum.php?gid=3">Android开发交流</a><em>›</em> <a href="forum-93-1.html">Android开发经验分享</a></div>
+	</div><div class="wp">
+	<!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
+</div>
+	<div class="boardnav">
+		<div id="ct" class="wp cl">
+
+			<div class="mn">
+				<div class="bm bml pbn">
+					<div class="bm_h cl">
+<span class="y">
+<a href="home.php?mod=spacecp&amp;ac=favorite&amp;type=forum&amp;id=93&amp;handlekey=favoriteforum&amp;formhash=4804b765" id="a_favorite" class="fa_fav" onclick="showWindow(this.id, this.href, 'get', 0);">收藏本版 <strong class="xi1" id="number_favorite">(<span id="number_favorite_num">85</span>)</strong></a>
+<span class="pipe">|</span><a href="forum.php?mod=rss&amp;fid=93&amp;auth=b9fcNBmHOI6TSxdnQJslRoVDWS5gl0J0EaEVQYFMZ0nWTkwoQYUXGFNrjGnUE6WM" class="fa_rss" target="_blank" title="RSS">订阅</a>
+</span>
+						<h1 class="xs2">
+							<a href="forum-93-1.html">Android开发经验分享</a>
+							<span class="xs1 xw0 i">今日: <strong class="xi1">1371</strong><b class="ico_increase">&nbsp;</b><span class="pipe">|</span>主题: <strong class="xi1">6201</strong><span class="pipe">|</span>排名: <strong class="xi1" title="上次排名:438">6</strong><b class="ico_increase">&nbsp;</b></span></h1>
+					</div>
+					<div class="bm_c cl pbn">
+						<div>版主: <span class="xi2"><a href="space-username-com360.html" class="notabs" c="1" mid="card_3411">com360</a>, <a href="space-username-arjinmc.html" class="notabs" c="1" mid="card_7769">arjinmc</a>, <a href="space-username-469874851.html" class="notabs" c="1" mid="card_5751">469874851</a></span></div></div>
+				</div>
+
+
+
+				<div class="drag">
+					<!--[diy=diy4]--><div id="diy4" class="area"><div id="framewRulLg" class="frame move-span cl frame-1-1-1"><div class="title frame-title"><span class="titletext" style="color:rgb(255, 0, 0);">推荐主题</span></div><div id="framewRulLg_left" class="column frame-1-1-1-l"><div id="framewRulLg_left_temp" class="move-span temp"></div></div><div id="framewRulLg_center" class="column frame-1-1-1-c"><div id="framewRulLg_center_temp" class="move-span temp"></div></div><div id="framewRulLg_right" class="column frame-1-1-1-r"><div id="framewRulLg_right_temp" class="move-span temp"></div></div></div></div><!--[/diy]-->
+				</div>
+
+
+
+
+				<div id="pgt" class="bm bw0 pgs cl">
+					<span id="fd_page_top"><div class="pg"><a href="forum-93-3.html" class="prev">&nbsp;&nbsp;</a><a href="forum-93-1.html">1</a><a href="forum-93-2.html">2</a><a href="forum-93-3.html">3</a><strong>4</strong><a href="forum-93-5.html">5</a><a href="forum-93-6.html">6</a><a href="forum-93-7.html">7</a><a href="forum-93-8.html">8</a><a href="forum-93-9.html">9</a><a href="forum-93-10.html">10</a><a href="forum-93-173.html" class="last">... 173</a><label><input type="text" name="custompage" class="px" size="2" title="输入页码，按回车快速跳转" value="4" onkeydown="if(event.keyCode==13) {window.location='forum.php?mod=forumdisplay&amp;fid=93&amp;page='+this.value;; doane(event);}"><span title="共 173 页"> / 173 页</span></label><a href="forum-93-5.html" class="nxt">下一页</a></div></span>
+					<span class="pgb y" id="visitedforums" onmouseover="$('visitedforums').id = 'visitedforumstmp';this.id = 'visitedforums';showMenu({'ctrlid':this.id,'pos':'34'})" initialized="true"><a href="forum.php">返&nbsp;回</a></span>
+					<a href="javascript:;" id="newspecial" onmouseover="$('newspecial').id = 'newspecialtmp';this.id = 'newspecial';showMenu({'ctrlid':this.id})" onclick="showWindow('newthread', 'forum.php?mod=post&amp;action=newthread&amp;fid=93')" title="发新帖"><img src="static/image/common/pn_post.png" alt="发新帖"></a><div id="gt_forumdisplay_postbutton_top"><script type="text/javascript" src="http://api.geetest.com/get.php?gt=d1e176aedb3fce6647a8a86ea278b1f8&amp;challenge=540143a518c006cf52b2479e29c182c7&amp;product=popup&amp;sdk=discuz_1.0&amp;popupbtnid=livereplysubmit"></script><div class="gt_input"><input class="geetest_challenge" type="hidden" name="geetest_challenge" value=""><input class="geetest_validate" type="hidden" name="geetest_validate" value=""><input class="geetest_seccode" type="hidden" name="geetest_seccode" value=""></div><div class="gt_input"><input class="geetest_challenge" type="hidden" name="geetest_challenge"><input class="geetest_validate" type="hidden" name="geetest_validate"><input class="geetest_seccode" type="hidden" name="geetest_seccode"></div></div>    <script type="text/javascript">
+        function move_fast_geetest_before_submit() {
+            var livereplysubmit = $('livereplysubmit');
+            var geetest = $('gt_forumdisplay_postbutton_top');
+            livereplysubmit.parentNode.insertBefore(geetest, livereplysubmit);
+        }
+        _attachEvent(window, 'load', move_fast_geetest_before_submit);
+
+    </script></div>
+				<ul id="thread_types" class="ttp bm cl">
+					<li id="ttp_all" class="xw1 a"><a href="forum-93-1.html">全部</a></li>
+					<li><a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=55">Android分享<span class="xg1 num">2703</span></a></li>
+					<li><a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=56">Android讨论<span class="xg1 num">772</span></a></li>
+					<li><a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=113">程序猿感悟<span class="xg1 num">638</span></a></li>
+					<li><a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=130">在线课堂讨论<span class="xg1 num">31</span></a></li>
+				</ul>
+				<script type="text/javascript">showTypes('thread_types');</script>
+				<div id="threadlist" class="tl bm bmw" style="position: relative;">
+					<div class="th">
+						<table cellspacing="0" cellpadding="0">
+							<tbody><tr>
+								<th colspan="2">
+									<div class="tf">
+										<span id="atarget" onclick="setatarget(-1)" class="y atarget_1" title="在新窗口中打开帖子">新窗</span>
+										<a id="filter_special" href="javascript:;" class="showmenu xi2" onclick="showMenu(this.id)">全部主题</a>&nbsp;
+										<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=lastpost&amp;orderby=lastpost" class="xi2">最新</a>&nbsp;
+										<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=heat&amp;orderby=heats" class="xi2">热门</a>&nbsp;
+										<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=hot" class="xi2">热帖</a>&nbsp;
+										<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=digest&amp;digest=1" class="xi2">精华</a>&nbsp;
+										<a id="filter_dateline" href="javascript:;" class="showmenu xi2" onclick="showMenu(this.id)">更多</a>&nbsp;
+										<a href="javascript:;" onclick="checkForumnew_btn('93')" title="查看更新" class="forumrefresh"></a>
+<span id="clearstickthread" style="display: none;">
+<span class="pipe">|</span>
+<a href="javascript:;" onclick="clearStickThread()" class="xi2" title="显示置顶">显示置顶</a>
+</span>
+									</div>
+								</th>
+								<td class="by">作者</td>
+								<td class="num">回复/查看</td>
+								<td class="by">最后发表</td>
+							</tr>
+							</tbody></table>
+					</div>
+					<div class="bm_c">
+						<script type="text/javascript">var lasttime = 1475733576;var listcolspan= '5';</script>
+						<div id="forumnew" style="display:none"></div>
+						<form method="post" autocomplete="off" name="moderate" id="moderate" action="forum.php?mod=topicadmin&amp;action=moderate&amp;fid=93&amp;infloat=yes&amp;nopost=yes">
+							<input type="hidden" name="formhash" value="4804b765">
+							<input type="hidden" name="listextra" value="page%3D4">
+							<table summary="forum_93" cellspacing="0" cellpadding="0" id="threadlisttableid">
+								<tbody id="separatorline" class="emptb"><tr><td class="icn"></td><th></th><td class="by"></td><td class="num"></td><td class="by"></td></tr></tbody>
+								<tbody id="normalthread_316574">
+								<tr>
+									<td class="icn">
+										<a href="thread-316574-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_316574" class="showcontent y" title="更多操作" onclick="CONTENT_TID='316574';CONTENT_ID='normalthread_316574';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<em>[<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=55">Android分享</a>]</em> <a href="thread-316574-1-4.html" onclick="atarget(this)" class="s xst">各种样式的ProgressBar进度条</a>
+										<img src="static/image/filetype/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle">
+										<span class="tps">&nbsp;...<a href="thread-316574-2-4.html">2</a></span>
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-773877.html" c="1" mid="card_5300">alisonyian</a></cite>
+										<em><span>2013-12-6</span></em>
+									</td>
+									<td class="num"><a href="thread-316574-1-4.html" class="xi2">17</a><em>1869</em></td>
+									<td class="by">
+										<cite><a href="space-username-King-Z.html" c="1" mid="card_9916">King-Z</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=316574&amp;goto=lastpost#lastpost">2016-6-8 15:35</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_310250">
+								<tr>
+									<td class="icn">
+										<a href="thread-310250-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_310250" class="showcontent y" title="更多操作" onclick="CONTENT_TID='310250';CONTENT_ID='normalthread_310250';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<em>[<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=56">Android讨论</a>]</em> <a href="thread-310250-1-4.html" onclick="atarget(this)" class="s xst">关于在小米手机上调用不了二维码扫描的问题</a>
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-750583.html" c="1" mid="card_9582">Android路上的人</a></cite>
+										<em><span>2013-10-25</span></em>
+									</td>
+									<td class="num"><a href="thread-310250-1-4.html" class="xi2">7</a><em>2961</em></td>
+									<td class="by">
+										<cite><a href="space-username-%E7%A0%B4%E5%A9%86%E5%A9%8619933.html" c="1" mid="card_7415">破婆婆19933</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=310250&amp;goto=lastpost#lastpost">2016-6-8 10:58</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_286587">
+								<tr>
+									<td class="icn">
+										<a href="thread-286587-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_286587" class="showcontent y" title="更多操作" onclick="CONTENT_TID='286587';CONTENT_ID='normalthread_286587';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<em>[<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=55">Android分享</a>]</em> <a href="thread-286587-1-4.html" onclick="atarget(this)" class="s xst">ANDROID的WEBVIEW控件载入网页显示速度慢的究极解决方案</a>
+										<img src="static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 3">
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-661822.html" c="1" mid="card_8758">止步为红颜</a></cite>
+										<em><span>2013-6-19</span></em>
+									</td>
+									<td class="num"><a href="thread-286587-1-4.html" class="xi2">13</a><em>11282</em></td>
+									<td class="by">
+										<cite><a href="space-username-215136304.html" c="1" mid="card_5806">215136304</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=286587&amp;goto=lastpost#lastpost">2016-6-7 15:51</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_922290">
+								<tr>
+									<td class="icn">
+										<a href="thread-922290-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_922290" class="showcontent y" title="更多操作" onclick="CONTENT_TID='922290';CONTENT_ID='normalthread_922290';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<em>[<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=113">程序猿感悟</a>]</em> <a href="thread-922290-1-4.html" onclick="atarget(this)" class="s xst">为啥分类里面没有程序媛感悟!!!抛砖引玉谈面试</a>
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-1306649.html" c="1" mid="card_9341">wildcat314</a></cite>
+										<em><span>2016-6-7</span></em>
+									</td>
+									<td class="num"><a href="thread-922290-1-4.html" class="xi2">0</a><em>169</em></td>
+									<td class="by">
+										<cite><a href="space-username-wildcat314.html" c="1" mid="card_4793">wildcat314</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=922290&amp;goto=lastpost#lastpost">2016-6-7 09:56</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_922229">
+								<tr>
+									<td class="icn">
+										<a href="thread-922229-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_922229" class="showcontent y" title="更多操作" onclick="CONTENT_TID='922229';CONTENT_ID='normalthread_922229';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<em>[<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=55">Android分享</a>]</em> <a href="thread-922229-1-4.html" onclick="atarget(this)" class="s xst">XDroidRequest - 一款基于Android 6.0 网络请求框架</a>
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-2579880.html" c="1" mid="card_3965">小欢欢520</a></cite>
+										<em><span>2016-6-2</span></em>
+									</td>
+									<td class="num"><a href="thread-922229-1-4.html" class="xi2">1</a><em>163</em></td>
+									<td class="by">
+										<cite><a href="space-username-licong0716.html" c="1" mid="card_926">licong0716</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=922229&amp;goto=lastpost#lastpost">2016-6-6 16:30</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_316741">
+								<tr>
+									<td class="icn">
+										<a href="thread-316741-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_316741" class="showcontent y" title="更多操作" onclick="CONTENT_TID='316741';CONTENT_ID='normalthread_316741';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<em>[<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=56">Android讨论</a>]</em> <a href="thread-316741-1-4.html" onclick="atarget(this)" class="s xst" target="_blank">html5+native混合开发android应用</a>
+										<span class="tps">&nbsp;...<a href="thread-316741-2-4.html">2</a></span>
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-492725.html" c="1" mid="card_5713">gao18bin</a></cite>
+										<em><span>2013-12-7</span></em>
+									</td>
+									<td class="num"><a href="thread-316741-1-4.html" class="xi2">25</a><em>9819</em></td>
+									<td class="by">
+										<cite><a href="space-username-kaly176068250.html" c="1" mid="card_273">kaly176068250</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=316741&amp;goto=lastpost#lastpost">2016-6-6 15:36</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_921018">
+								<tr>
+									<td class="icn">
+										<a href="thread-921018-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_921018" class="showcontent y" title="更多操作" onclick="CONTENT_TID='921018';CONTENT_ID='normalthread_921018';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<em>[<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=55">Android分享</a>]</em> <a href="thread-921018-1-4.html" onclick="atarget(this)" class="s xst">仿网易新闻客户端启动页动态加载广告思路</a>
+										<img src="static/image/filetype/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle">
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-2593031.html" c="1" mid="card_5328">API_Cloud</a></cite>
+										<em><span>2016-4-5</span></em>
+									</td>
+									<td class="num"><a href="thread-921018-1-4.html" class="xi2">1</a><em>1485</em></td>
+									<td class="by">
+										<cite><a href="space-username-freegt.html" c="1" mid="card_2577">freegt</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=921018&amp;goto=lastpost#lastpost">2016-6-1 01:29</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_299259">
+								<tr>
+									<td class="icn">
+										<a href="thread-299259-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_299259" class="showcontent y" title="更多操作" onclick="CONTENT_TID='299259';CONTENT_ID='normalthread_299259';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<em>[<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=55">Android分享</a>]</em> <a href="thread-299259-1-4.html" onclick="atarget(this)" class="s xst">省市区三级联动</a>
+										<img src="static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle">
+										<img src="static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 2">
+										<img src="static/image/common/hot_1.gif" align="absmiddle" alt="heatlevel" title="热度: 62">
+										<span class="tps">&nbsp;...<a href="thread-299259-2-4.html">2</a><a href="thread-299259-3-4.html">3</a><a href="thread-299259-4-4.html">4</a></span>
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-754763.html" c="1" mid="card_4834">caogangyyh</a></cite>
+										<em><span>2013-8-9</span></em>
+									</td>
+									<td class="num"><a href="thread-299259-1-4.html" class="xi2">54</a><em>6723</em></td>
+									<td class="by">
+										<cite><a href="space-username-wang1225.html" c="1" mid="card_7692">wang1225</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=299259&amp;goto=lastpost#lastpost">2016-5-31 16:53</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_157831">
+								<tr>
+									<td class="icn">
+										<a href="thread-157831-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_157831" class="showcontent y" title="更多操作" onclick="CONTENT_TID='157831';CONTENT_ID='normalthread_157831';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<a href="thread-157831-1-4.html" onclick="atarget(this)" class="s xst">Android创建UI的新思路：用javascript与Activity进行交互</a>
+										<img src="static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle">
+										<img src="static/image/common/hot_3.gif" align="absmiddle" alt="heatlevel" title="热度: 4024">
+										<span class="tps">&nbsp;...<a href="thread-157831-2-4.html">2</a><a href="thread-157831-3-4.html">3</a><a href="thread-157831-4-4.html">4</a><a href="thread-157831-5-4.html">5</a><a href="thread-157831-6-4.html">6</a>..<a href="thread-157831-107-4.html">107</a></span>
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-4914.html" c="1" mid="card_8087">sa111111</a></cite>
+										<em><span>2012-2-27</span></em>
+									</td>
+									<td class="num"><a href="thread-157831-1-4.html" class="xi2">1602</a><em>61222</em></td>
+									<td class="by">
+										<cite><a href="space-username-%E7%99%BD%E7%90%B3.html" c="1" mid="card_8786">白琳</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=157831&amp;goto=lastpost#lastpost">2016-5-31 09:53</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_921118">
+								<tr>
+									<td class="icn">
+										<a href="thread-921118-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_921118" class="showcontent y" title="更多操作" onclick="CONTENT_TID='921118';CONTENT_ID='normalthread_921118';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<em>[<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=55">Android分享</a>]</em> <a href="thread-921118-1-4.html" onclick="atarget(this)" class="s xst">Android 常用工具类全集</a>
+										<img src="static/image/filetype/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle">
+										<img src="static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 1">
+										<span class="tps">&nbsp;...<a href="thread-921118-2-4.html">2</a><a href="thread-921118-3-4.html">3</a></span>
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-1143556.html" c="1" mid="card_4606">anjoy紫外线</a></cite>
+										<em><span>2016-4-8</span></em>
+									</td>
+									<td class="num"><a href="thread-921118-1-4.html" class="xi2">31</a><em>1420</em></td>
+									<td class="by">
+										<cite><a href="space-username-xjgpeople.html" c="1" mid="card_9853">xjgpeople</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=921118&amp;goto=lastpost#lastpost">2016-5-30 19:59</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_316924">
+								<tr>
+									<td class="icn">
+										<a href="thread-316924-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_316924" class="showcontent y" title="更多操作" onclick="CONTENT_TID='316924';CONTENT_ID='normalthread_316924';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<em>[<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=55">Android分享</a>]</em> <a href="thread-316924-1-4.html" onclick="atarget(this)" class="s xst">安卓高仿手机QQ(客户端+服务端+数据库设计)</a>
+										<img src="static/image/filetype/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle">
+										<img src="static/image/common/digest_1.gif" align="absmiddle" alt="digest" title="精华 1">
+										<img src="static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 9">
+										<img src="static/image/common/hot_3.gif" align="absmiddle" alt="heatlevel" title="热度: 395">
+										<img src="static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分">
+										<span class="tps">&nbsp;...<a href="thread-316924-2-4.html">2</a><a href="thread-316924-3-4.html">3</a><a href="thread-316924-4-4.html">4</a><a href="thread-316924-5-4.html">5</a><a href="thread-316924-6-4.html">6</a>..<a href="thread-316924-21-4.html">21</a></span>
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-773877.html" c="1" mid="card_5300">alisonyian</a></cite>
+										<em><span>2013-12-9</span></em>
+									</td>
+									<td class="num"><a href="thread-316924-1-4.html" class="xi2">316</a><em>21633</em></td>
+									<td class="by">
+										<cite><a href="space-username-%E8%BD%A9%E5%AE%B8.html" c="1" mid="card_8999">轩宸</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=316924&amp;goto=lastpost#lastpost">2016-5-30 16:37</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_495800">
+								<tr>
+									<td class="icn">
+										<a href="thread-495800-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_495800" class="showcontent y" title="更多操作" onclick="CONTENT_TID='495800';CONTENT_ID='normalthread_495800';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<em>[<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=55">Android分享</a>]</em> <a href="thread-495800-1-4.html" onclick="atarget(this)" class="s xst">圆形旋转菜单的实现</a>
+										<img src="static/image/filetype/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle">
+										<img src="static/image/common/hot_2.gif" align="absmiddle" alt="heatlevel" title="热度: 116">
+										<span class="tps">&nbsp;...<a href="thread-495800-2-4.html">2</a><a href="thread-495800-3-4.html">3</a><a href="thread-495800-4-4.html">4</a><a href="thread-495800-5-4.html">5</a><a href="thread-495800-6-4.html">6</a>..<a href="thread-495800-7-4.html">7</a></span>
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-812710.html" c="1" mid="card_3538">binbinqq86</a></cite>
+										<em><span>2014-6-6</span></em>
+									</td>
+									<td class="num"><a href="thread-495800-1-4.html" class="xi2">98</a><em>7884</em></td>
+									<td class="by">
+										<cite><a href="space-username-%E6%9C%88%E5%85%89%E6%9D%AF123344.html" c="1" mid="card_7819">月光杯123344</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=495800&amp;goto=lastpost#lastpost">2016-5-28 23:16</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_54603">
+								<tr>
+									<td class="icn">
+										<a href="thread-54603-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_54603" class="showcontent y" title="更多操作" onclick="CONTENT_TID='54603';CONTENT_ID='normalthread_54603';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<a href="thread-54603-1-4.html" onclick="atarget(this)" class="s xst">android系统底层到应用层全方位剖析</a>
+										<img src="static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle">
+										<img src="static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 6">
+										<img src="static/image/common/hot_3.gif" align="absmiddle" alt="heatlevel" title="热度: 1528">
+										<span class="tps">&nbsp;...<a href="thread-54603-2-4.html">2</a><a href="thread-54603-3-4.html">3</a><a href="thread-54603-4-4.html">4</a><a href="thread-54603-5-4.html">5</a><a href="thread-54603-6-4.html">6</a>..<a href="thread-54603-23-4.html">23</a></span>
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-97518.html" c="1" mid="card_1481">lpw14</a></cite>
+										<em><span>2011-1-7</span></em>
+									</td>
+									<td class="num"><a href="thread-54603-1-4.html" class="xi2">335</a><em>24126</em></td>
+									<td class="by">
+										<cite><a href="space-username-wang1225.html" c="1" mid="card_7692">wang1225</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=54603&amp;goto=lastpost#lastpost">2016-5-27 13:59</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_917620">
+								<tr>
+									<td class="icn">
+										<a href="thread-917620-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_917620" class="showcontent y" title="更多操作" onclick="CONTENT_TID='917620';CONTENT_ID='normalthread_917620';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<em>[<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=56">Android讨论</a>]</em> <a href="thread-917620-1-4.html" onclick="atarget(this)" class="s xst">Notifications背景颜色跟随系统下拉栏</a>
+										- <span class="xi1">[回帖奖励 <strong> 60</strong> ]</span>
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-566623.html" c="1" mid="card_400">天涯-明月</a></cite>
+										<em><span>2015-12-7</span></em>
+									</td>
+									<td class="num"><a href="thread-917620-1-4.html" class="xi2">6</a><em>1655</em></td>
+									<td class="by">
+										<cite><a href="space-username-wang1225.html" c="1" mid="card_7692">wang1225</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=917620&amp;goto=lastpost#lastpost">2016-5-27 13:58</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_922126">
+								<tr>
+									<td class="icn">
+										<a href="thread-922126-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_922126" class="showcontent y" title="更多操作" onclick="CONTENT_TID='922126';CONTENT_ID='normalthread_922126';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<em>[<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=55">Android分享</a>]</em> <a href="thread-922126-1-4.html" onclick="atarget(this)" class="s xst">常用的一种tablayout布局</a>
+										<img src="static/image/filetype/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle">
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-1311343.html" c="1" mid="card_5598">liuzhixing75</a></cite>
+										<em><span>2016-5-25</span></em>
+									</td>
+									<td class="num"><a href="thread-922126-1-4.html" class="xi2">1</a><em>221</em></td>
+									<td class="by">
+										<cite><a href="space-username-qwe5252363.html" c="1" mid="card_2218">qwe5252363</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=922126&amp;goto=lastpost#lastpost">2016-5-26 15:26</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_159826">
+								<tr>
+									<td class="icn">
+										<a href="thread-159826-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_159826" class="showcontent y" title="更多操作" onclick="CONTENT_TID='159826';CONTENT_ID='normalthread_159826';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<a href="thread-159826-1-4.html" onclick="atarget(this)" class="s xst">android应用卸载提示[绝对经典，不容错过]</a>
+										<img src="static/image/filetype/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle">
+										<img src="static/image/common/digest_1.gif" align="absmiddle" alt="digest" title="精华 1">
+										<img src="static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 8">
+										<img src="static/image/common/hot_3.gif" align="absmiddle" alt="heatlevel" title="热度: 1909">
+										<span class="tps">&nbsp;...<a href="thread-159826-2-4.html">2</a><a href="thread-159826-3-4.html">3</a><a href="thread-159826-4-4.html">4</a><a href="thread-159826-5-4.html">5</a><a href="thread-159826-6-4.html">6</a>..<a href="thread-159826-63-4.html">63</a></span>
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-487937.html" c="1" mid="card_4184">大陆刀客</a></cite>
+										<em><span>2012-3-10</span></em>
+									</td>
+									<td class="num"><a href="thread-159826-1-4.html" class="xi2">978</a><em>57084</em></td>
+									<td class="by">
+										<cite><a href="space-username-johnnycmj.html" c="1" mid="card_9695">johnnycmj</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=159826&amp;goto=lastpost#lastpost">2016-5-26 09:58</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_51665">
+								<tr>
+									<td class="icn">
+										<a href="thread-51665-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_51665" class="showcontent y" title="更多操作" onclick="CONTENT_TID='51665';CONTENT_ID='normalthread_51665';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<a href="thread-51665-1-4.html" onclick="atarget(this)" class="s xst">android kernel 开发培训</a>
+										<img src="static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle">
+										<img src="static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 2">
+										<img src="static/image/common/hot_3.gif" align="absmiddle" alt="heatlevel" title="热度: 2275">
+										<span class="tps">&nbsp;...<a href="thread-51665-2-4.html">2</a><a href="thread-51665-3-4.html">3</a><a href="thread-51665-4-4.html">4</a><a href="thread-51665-5-4.html">5</a><a href="thread-51665-6-4.html">6</a>..<a href="thread-51665-33-4.html">33</a></span>
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-118298.html" c="1" mid="card_3054">outdomyselft</a></cite>
+										<em><span>2010-12-19</span></em>
+									</td>
+									<td class="num"><a href="thread-51665-1-4.html" class="xi2">491</a><em>30401</em></td>
+									<td class="by">
+										<cite><a href="space-username-johnnycmj.html" c="1" mid="card_9695">johnnycmj</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=51665&amp;goto=lastpost#lastpost">2016-5-26 09:32</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_911607">
+								<tr>
+									<td class="icn">
+										<a href="thread-911607-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_911607" class="showcontent y" title="更多操作" onclick="CONTENT_TID='911607';CONTENT_ID='normalthread_911607';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<em>[<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=55">Android分享</a>]</em> <a href="thread-911607-1-4.html" onclick="atarget(this)" class="s xst">一个简单的android文件选择器的实现</a>
+										<img src="static/image/filetype/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle">
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-1265604.html" c="1" mid="card_2086">我是路吃</a></cite>
+										<em><span>2015-10-14</span></em>
+									</td>
+									<td class="num"><a href="thread-911607-1-4.html" class="xi2">3</a><em>643</em></td>
+									<td class="by">
+										<cite><a href="space-username-hanyinghai.html" c="1" mid="card_496">hanyinghai</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=911607&amp;goto=lastpost#lastpost">2016-5-25 16:37</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_922091">
+								<tr>
+									<td class="icn">
+										<a href="thread-922091-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_922091" class="showcontent y" title="更多操作" onclick="CONTENT_TID='922091';CONTENT_ID='normalthread_922091';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<em>[<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=55">Android分享</a>]</em> <a href="thread-922091-1-4.html" onclick="atarget(this)" class="s xst">Android eclipse环境配置，以及jdk环境配置</a>
+										<img src="static/image/filetype/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle">
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-1143556.html" c="1" mid="card_4606">anjoy紫外线</a></cite>
+										<em><span>2016-5-24</span></em>
+									</td>
+									<td class="num"><a href="thread-922091-1-4.html" class="xi2">0</a><em>484</em></td>
+									<td class="by">
+										<cite><a href="space-username-anjoy%E7%B4%AB%E5%A4%96%E7%BA%BF.html" c="1" mid="card_9569">anjoy紫外线</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=922091&amp;goto=lastpost#lastpost">2016-5-24 09:22</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_922024">
+								<tr>
+									<td class="icn">
+										<a href="thread-922024-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_922024" class="showcontent y" title="更多操作" onclick="CONTENT_TID='922024';CONTENT_ID='normalthread_922024';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<em>[<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=55">Android分享</a>]</em> <a href="thread-922024-1-4.html" onclick="atarget(this)" class="s xst">android 闹钟提醒并且在锁屏下弹出Dialog对话框并播放铃声和...</a>
+										<img src="static/image/filetype/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle">
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-574035.html" c="1" mid="card_5000">johnnycmj</a></cite>
+										<em><span>2016-5-18</span></em>
+									</td>
+									<td class="num"><a href="thread-922024-1-4.html" class="xi2">1</a><em>511</em></td>
+									<td class="by">
+										<cite><a href="space-username-gupeng133.html" c="1" mid="card_9303">gupeng133</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=922024&amp;goto=lastpost#lastpost">2016-5-23 16:10</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_922031">
+								<tr>
+									<td class="icn">
+										<a href="thread-922031-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_922031" class="showcontent y" title="更多操作" onclick="CONTENT_TID='922031';CONTENT_ID='normalthread_922031';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<em>[<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=55">Android分享</a>]</em> <a href="thread-922031-1-4.html" onclick="atarget(this)" class="s xst">layer-list,selector,shape使用心得</a>
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-2894543.html" c="1" mid="card_7509">帅帅的bruce</a></cite>
+										<em><span>2016-5-19</span></em>
+									</td>
+									<td class="num"><a href="thread-922031-1-4.html" class="xi2">1</a><em>288</em></td>
+									<td class="by">
+										<cite><a href="space-username-shaipxiang.html" c="1" mid="card_6235">shaipxiang</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=922031&amp;goto=lastpost#lastpost">2016-5-23 11:57</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_556407">
+								<tr>
+									<td class="icn">
+										<a href="thread-556407-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_556407" class="showcontent y" title="更多操作" onclick="CONTENT_TID='556407';CONTENT_ID='normalthread_556407';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<em>[<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=55">Android分享</a>]</em> <a href="thread-556407-1-4.html" onclick="atarget(this)" class="s xst">图片缩放：区域平均算法在Android里的应用【原创】</a>
+										<img src="static/image/filetype/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle">
+										<img src="static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 1">
+										<span class="tps">&nbsp;...<a href="thread-556407-2-4.html">2</a></span>
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-39728.html" c="1" mid="card_7884">craining</a></cite>
+										<em><span>2014-12-5</span></em>
+									</td>
+									<td class="num"><a href="thread-556407-1-4.html" class="xi2">16</a><em>1933</em></td>
+									<td class="by">
+										<cite><a href="space-username-yanggz66.html" c="1" mid="card_2811">yanggz66</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=556407&amp;goto=lastpost#lastpost">2016-5-17 15:53</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_544603">
+								<tr>
+									<td class="icn">
+										<a href="thread-544603-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_544603" class="showcontent y" title="更多操作" onclick="CONTENT_TID='544603';CONTENT_ID='normalthread_544603';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<em>[<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=55">Android分享</a>]</em> <a href="thread-544603-1-4.html" onclick="atarget(this)" class="s xst">程序猿媛 八：Android侧滑栏+底部导航栏（选项卡）</a>
+										<img src="static/image/filetype/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle">
+										<img src="static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 7">
+										<img src="static/image/common/hot_3.gif" align="absmiddle" alt="heatlevel" title="热度: 506">
+										<span class="tps">&nbsp;...<a href="thread-544603-2-4.html">2</a><a href="thread-544603-3-4.html">3</a><a href="thread-544603-4-4.html">4</a><a href="thread-544603-5-4.html">5</a><a href="thread-544603-6-4.html">6</a>..<a href="thread-544603-37-4.html">37</a></span>
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-11377.html" c="1" mid="card_2705">LuoYer</a></cite>
+										<em><span>2014-9-15</span></em>
+									</td>
+									<td class="num"><a href="thread-544603-1-4.html" class="xi2">545</a><em>26728</em></td>
+									<td class="by">
+										<cite><a href="space-username-zywrxq1224.html" c="1" mid="card_7888">zywrxq1224</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=544603&amp;goto=lastpost#lastpost">2016-5-17 09:38</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_578814">
+								<tr>
+									<td class="icn">
+										<a href="thread-578814-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_578814" class="showcontent y" title="更多操作" onclick="CONTENT_TID='578814';CONTENT_ID='normalthread_578814';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<em>[<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=113">程序猿感悟</a>]</em> <a href="thread-578814-1-4.html" onclick="atarget(this)" class="s xst">一个Android菜鸟“面霸”的面试经历分享</a>
+										<img src="static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 4">
+										<img src="static/image/common/hot_1.gif" align="absmiddle" alt="heatlevel" title="热度: 75">
+										<img src="static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分">
+										<span class="tps">&nbsp;...<a href="thread-578814-2-4.html">2</a><a href="thread-578814-3-4.html">3</a><a href="thread-578814-4-4.html">4</a><a href="thread-578814-5-4.html">5</a><a href="thread-578814-6-4.html">6</a>..<a href="thread-578814-8-4.html">8</a></span>
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-568832.html" c="1" mid="card_1533">蓝沙</a></cite>
+										<em><span>2015-4-29</span></em>
+									</td>
+									<td class="num"><a href="thread-578814-1-4.html" class="xi2">105</a><em>5899</em></td>
+									<td class="by">
+										<cite><a href="space-username-zywrxq1224.html" c="1" mid="card_7888">zywrxq1224</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=578814&amp;goto=lastpost#lastpost">2016-5-17 09:36</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_262843">
+								<tr>
+									<td class="icn">
+										<a href="thread-262843-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_262843" class="showcontent y" title="更多操作" onclick="CONTENT_TID='262843';CONTENT_ID='normalthread_262843';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<em>[<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=55">Android分享</a>]</em> <a href="thread-262843-1-4.html" onclick="atarget(this)" class="s xst">极简视频播放器</a>
+										<img src="static/image/filetype/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle">
+										<img src="static/image/common/hot_1.gif" align="absmiddle" alt="heatlevel" title="热度: 59">
+										<span class="tps">&nbsp;...<a href="thread-262843-2-4.html">2</a><a href="thread-262843-3-4.html">3</a><a href="thread-262843-4-4.html">4</a></span>
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-598172.html" c="1" mid="card_2844">皮诺</a></cite>
+										<em><span>2013-3-20</span></em>
+									</td>
+									<td class="num"><a href="thread-262843-1-4.html" class="xi2">51</a><em>6014</em></td>
+									<td class="by">
+										<cite><a href="space-username-kevin517.html" c="1" mid="card_2041">kevin517</a></cite>
+										<em><a href="thread-262843-1-1.html">2016-5-16 16:51</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_185954">
+								<tr>
+									<td class="icn">
+										<a href="thread-185954-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_185954" class="showcontent y" title="更多操作" onclick="CONTENT_TID='185954';CONTENT_ID='normalthread_185954';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<a href="thread-185954-1-4.html" onclick="atarget(this)" class="s xst">Android Intent调用大全、系统自带Intent调用大全</a>
+										<img src="static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 3">
+										<span class="tps">&nbsp;...<a href="thread-185954-2-4.html">2</a></span>
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-633328.html" c="1" mid="card_7907">eshine361</a></cite>
+										<em><span>2012-7-20</span></em>
+									</td>
+									<td class="num"><a href="thread-185954-1-4.html" class="xi2">25</a><em>9039</em></td>
+									<td class="by">
+										<cite><a href="space-username-kalends.html" c="1" mid="card_8725">kalends</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=185954&amp;goto=lastpost#lastpost">2016-5-16 10:49</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_559966">
+								<tr>
+									<td class="icn">
+										<a href="thread-559966-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_559966" class="showcontent y" title="更多操作" onclick="CONTENT_TID='559966';CONTENT_ID='normalthread_559966';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<em>[<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=55">Android分享</a>]</em> <a href="thread-559966-1-4.html" onclick="atarget(this)" class="s xst">设置WebView字体颜色，背景颜色</a>
+										<img src="static/image/common/hot_3.gif" align="absmiddle" alt="heatlevel" title="热度: 231">
+										<span class="tps">&nbsp;...<a href="thread-559966-2-4.html">2</a><a href="thread-559966-3-4.html">3</a><a href="thread-559966-4-4.html">4</a><a href="thread-559966-5-4.html">5</a><a href="thread-559966-6-4.html">6</a>..<a href="thread-559966-16-4.html">16</a></span>
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-1286197.html" c="1" mid="card_5319">竹轩沐雨</a></cite>
+										<em><span>2014-12-31</span></em>
+									</td>
+									<td class="num"><a href="thread-559966-1-4.html" class="xi2">233</a><em>14173</em></td>
+									<td class="by">
+										<cite><a href="space-username-paddy912.html" c="1" mid="card_9275">paddy912</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=559966&amp;goto=lastpost#lastpost">2016-5-13 17:03</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_921847">
+								<tr>
+									<td class="icn">
+										<a href="thread-921847-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_921847" class="showcontent y" title="更多操作" onclick="CONTENT_TID='921847';CONTENT_ID='normalthread_921847';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<em>[<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=56">Android讨论</a>]</em> <a href="thread-921847-1-4.html" onclick="atarget(this)" class="s xst">想实现一个android探针的功能</a>
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-1181878.html" c="1" mid="card_6197">舍弃一切</a></cite>
+										<em><span>2016-5-6</span></em>
+									</td>
+									<td class="num"><a href="thread-921847-1-4.html" class="xi2">1</a><em>374</em></td>
+									<td class="by">
+										<cite><a href="space-username-touch_ping.html" c="1" mid="card_8529">touch_ping</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=921847&amp;goto=lastpost#lastpost">2016-5-11 11:36</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_921903">
+								<tr>
+									<td class="icn">
+										<a href="thread-921903-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_921903" class="showcontent y" title="更多操作" onclick="CONTENT_TID='921903';CONTENT_ID='normalthread_921903';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<em>[<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=55">Android分享</a>]</em> <a href="thread-921903-1-4.html" onclick="atarget(this)" class="s xst">Android 6.0 wifi 获取列表大坑</a>
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-1145254.html" c="1" mid="card_320">纠。结。体。</a></cite>
+										<em><span>2016-5-10</span></em>
+									</td>
+									<td class="num"><a href="thread-921903-1-4.html" class="xi2">1</a><em>1095</em></td>
+									<td class="by">
+										<cite><a href="space-username-%E4%B8%89%E5%8D%83%E7%A7%92_%E3%81%A5%E5%B7%AE%E8%B7%9D.html" c="1" mid="card_2103">三千秒_づ差距</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=921903&amp;goto=lastpost#lastpost">2016-5-11 09:51</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_80523">
+								<tr>
+									<td class="icn">
+										<a href="thread-80523-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_80523" class="showcontent y" title="更多操作" onclick="CONTENT_TID='80523';CONTENT_ID='normalthread_80523';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<a href="thread-80523-1-4.html" onclick="atarget(this)" class="s xst">Android 日记本解析（一）</a>
+										<img src="static/image/filetype/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle">
+										<img src="static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 1">
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-498939.html" c="1" mid="card_9228">4546</a></cite>
+										<em><span>2011-6-17</span></em>
+									</td>
+									<td class="num"><a href="thread-80523-1-4.html" class="xi2">8</a><em>3149</em></td>
+									<td class="by">
+										<cite><a href="space-username-sakura%E2%80%A7lin.html" c="1" mid="card_2099">sakura‧lin</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=80523&amp;goto=lastpost#lastpost">2016-5-10 13:59</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_913803">
+								<tr>
+									<td class="icn">
+										<a href="thread-913803-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_913803" class="showcontent y" title="更多操作" onclick="CONTENT_TID='913803';CONTENT_ID='normalthread_913803';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<em>[<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=56">Android讨论</a>]</em> <a href="thread-913803-1-4.html" onclick="atarget(this)" class="s xst">Android网络图片三级缓存策略</a>
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-488165.html" c="1" mid="card_370">hugh19840713</a></cite>
+										<em><span>2015-10-27</span></em>
+									</td>
+									<td class="num"><a href="thread-913803-1-4.html" class="xi2">5</a><em>9233</em></td>
+									<td class="by">
+										<cite><a href="space-username-hlr.html" c="1" mid="card_7640">hlr</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=913803&amp;goto=lastpost#lastpost">2016-5-10 11:55</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_313702">
+								<tr>
+									<td class="icn">
+										<a href="thread-313702-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_313702" class="showcontent y" title="更多操作" onclick="CONTENT_TID='313702';CONTENT_ID='normalthread_313702';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<em>[<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=55">Android分享</a>]</em> <a href="thread-313702-1-4.html" onclick="atarget(this)" class="s xst">27种设计模式例子配详细注释源代码完整版 强势更新！！.</a>
+										<img src="static/image/filetype/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle">
+										<img src="static/image/common/digest_1.gif" align="absmiddle" alt="digest" title="精华 1">
+										<img src="static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 39">
+										<img src="static/image/common/hot_3.gif" align="absmiddle" alt="heatlevel" title="热度: 754">
+										<img src="static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分">
+										<span class="tps">&nbsp;...<a href="thread-313702-2-4.html">2</a><a href="thread-313702-3-4.html">3</a><a href="thread-313702-4-4.html">4</a><a href="thread-313702-5-4.html">5</a><a href="thread-313702-6-4.html">6</a>..<a href="thread-313702-40-4.html">40</a></span>
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-750583.html" c="1" mid="card_9582">Android路上的人</a></cite>
+										<em><span>2013-11-23</span></em>
+									</td>
+									<td class="num"><a href="thread-313702-1-4.html" class="xi2">599</a><em>31730</em></td>
+									<td class="by">
+										<cite><a href="space-username-kanwairen2005.html" c="1" mid="card_9994">kanwairen2005</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=313702&amp;goto=lastpost#lastpost">2016-5-9 15:09</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_917535">
+								<tr>
+									<td class="icn">
+										<a href="thread-917535-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_917535" class="showcontent y" title="更多操作" onclick="CONTENT_TID='917535';CONTENT_ID='normalthread_917535';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<em>[<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=55">Android分享</a>]</em> <a href="thread-917535-1-4.html" onclick="atarget(this)" class="s xst">Android M 运行时权限开发者需要知道的一切</a>
+										<img src="static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 1">
+										<img src="static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分">
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-1145254.html" c="1" mid="card_320">纠。结。体。</a></cite>
+										<em><span>2015-12-4</span></em>
+									</td>
+									<td class="num"><a href="thread-917535-1-4.html" class="xi2">9</a><em>788</em></td>
+									<td class="by">
+										<cite><a href="space-username-oratop007.html" c="1" mid="card_8965">oratop007</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=917535&amp;goto=lastpost#lastpost">2016-5-9 12:17</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_921845">
+								<tr>
+									<td class="icn">
+										<a href="thread-921845-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_921845" class="showcontent y" title="更多操作" onclick="CONTENT_TID='921845';CONTENT_ID='normalthread_921845';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<em>[<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=55">Android分享</a>]</em> <a href="thread-921845-1-4.html" onclick="atarget(this)" class="s xst">android camera获取拍照的图片bitmap</a>
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-2634888.html" c="1" mid="card_5741">宁时贤</a></cite>
+										<em><span>2016-5-6</span></em>
+									</td>
+									<td class="num"><a href="thread-921845-1-4.html" class="xi2">1</a><em>432</em></td>
+									<td class="by">
+										<cite><a href="space-username-lidey.html" c="1" mid="card_9974">lidey</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=921845&amp;goto=lastpost#lastpost">2016-5-9 10:59</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_921857">
+								<tr>
+									<td class="icn">
+										<a href="thread-921857-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_921857" class="showcontent y" title="更多操作" onclick="CONTENT_TID='921857';CONTENT_ID='normalthread_921857';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<em>[<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=55">Android分享</a>]</em> <a href="thread-921857-1-4.html" onclick="atarget(this)" class="s xst">连续按两次返回键就退出</a>
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-2634888.html" c="1" mid="card_5741">宁时贤</a></cite>
+										<em><span>2016-5-6</span></em>
+									</td>
+									<td class="num"><a href="thread-921857-1-4.html" class="xi2">0</a><em>252</em></td>
+									<td class="by">
+										<cite><a href="space-username-%E5%AE%81%E6%97%B6%E8%B4%A4.html" c="1" mid="card_388">宁时贤</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=921857&amp;goto=lastpost#lastpost">2016-5-6 13:12</a></em>
+									</td>
+								</tr>
+								</tbody>
+								<tbody id="normalthread_921846">
+								<tr>
+									<td class="icn">
+										<a href="thread-921846-1-4.html" title="新窗口打开" target="_blank">
+											<img src="static/image/common/folder_common.gif">
+										</a>
+									</td>
+									<th class="common">
+										<a href="javascript:;" id="content_921846" class="showcontent y" title="更多操作" onclick="CONTENT_TID='921846';CONTENT_ID='normalthread_921846';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<em>[<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=typeid&amp;typeid=55">Android分享</a>]</em> <a href="thread-921846-1-4.html" onclick="atarget(this)" class="s xst">图库Gallary选择图片</a>
+									</th>
+									<td class="by">
+										<cite>
+											<a href="space-uid-2634888.html" c="1" mid="card_5741">宁时贤</a></cite>
+										<em><span>2016-5-6</span></em>
+									</td>
+									<td class="num"><a href="thread-921846-1-4.html" class="xi2">0</a><em>186</em></td>
+									<td class="by">
+										<cite><a href="space-username-%E5%AE%81%E6%97%B6%E8%B4%A4.html" c="1" mid="card_388">宁时贤</a></cite>
+										<em><a href="forum.php?mod=redirect&amp;tid=921846&amp;goto=lastpost#lastpost">2016-5-6 10:58</a></em>
+									</td>
+								</tr>
+								</tbody>
+							</table><!-- end of table "forum_G[fid]" branch 1/3 -->
+						</form>
+					</div>
+				</div>
+
+				<div id="filter_special_menu" class="p_pop" style="display:none" change="location.href='forum.php?mod=forumdisplay&amp;fid=93&amp;filter='+$('filter_special').value">
+					<ul>
+						<li><a href="forum-93-1.html">全部主题</a></li>
+						<li><a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=specialtype&amp;specialtype=poll">投票</a></li><li><a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=specialtype&amp;specialtype=activity">活动</a></li><li><a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=specialtype&amp;specialtype=debate">辩论</a></li></ul>
+				</div>
+				<div id="filter_reward_menu" class="p_pop" style="display:none" change="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=specialtype&amp;specialtype=reward&amp;rewardtype='+$('filter_reward').value">
+					<ul>
+						<li><a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=specialtype&amp;specialtype=reward">全部悬赏</a></li>
+						<li><a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=specialtype&amp;specialtype=reward&amp;rewardtype=1">进行中</a></li></ul>
+				</div>
+				<div id="filter_dateline_menu" class="p_pop" style="display:none">
+					<ul class="pop_moremenu">
+						<li>排序:
+							<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=author&amp;orderby=dateline">发帖时间</a><span class="pipe">|</span>
+							<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=reply&amp;orderby=replies">回复/查看</a><span class="pipe">|</span>
+							<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=reply&amp;orderby=views">查看</a>
+						</li>
+						<li>时间:
+							<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;orderby=lastpost&amp;filter=dateline" class="xw1">全部时间</a><span class="pipe">|</span>
+							<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;orderby=lastpost&amp;filter=dateline&amp;dateline=86400">一天</a><span class="pipe">|</span>
+							<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;orderby=lastpost&amp;filter=dateline&amp;dateline=172800">两天</a><span class="pipe">|</span>
+							<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;orderby=lastpost&amp;filter=dateline&amp;dateline=604800">一周</a><span class="pipe">|</span>
+							<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;orderby=lastpost&amp;filter=dateline&amp;dateline=2592000">一个月</a><span class="pipe">|</span>
+							<a href="forum.php?mod=forumdisplay&amp;fid=93&amp;orderby=lastpost&amp;filter=dateline&amp;dateline=7948800">三个月</a>
+						</li>
+					</ul>
+				</div>
+				<div id="filter_orderby_menu" class="p_pop" style="display:none">
+					<ul>
+						<li><a href="forum-93-1.html">默认排序</a></li>
+						<li><a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=author&amp;orderby=dateline">发帖时间</a></li>
+						<li><a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=reply&amp;orderby=replies">回复/查看</a></li>
+						<li><a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=reply&amp;orderby=views">查看</a></li>
+						<li><a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=lastpost&amp;orderby=lastpost">最后发表</a></li>
+						<li><a href="forum.php?mod=forumdisplay&amp;fid=93&amp;filter=heat&amp;orderby=heats">热门</a></li>
+					</ul>
+				</div>
+				<a class="bm_h" href="javascript:;" rel="forum.php?mod=forumdisplay&amp;fid=93&amp;page=5" curpage="4" id="autopbn" totalpage="173" picstyle="0" forumdefstyle="">下一页 »</a>
+				<script src="http://s1.eoeandroid.com/js/autoloadpage.js?fa1" type="text/javascript"></script>
+				<div class="bm bw0 pgs cl">
+					<span id="fd_page_bottom"><div class="pg"><a href="forum-93-3.html" class="prev">&nbsp;&nbsp;</a><a href="forum-93-1.html">1</a><a href="forum-93-2.html">2</a><a href="forum-93-3.html">3</a><strong>4</strong><a href="forum-93-5.html">5</a><a href="forum-93-6.html">6</a><a href="forum-93-7.html">7</a><a href="forum-93-8.html">8</a><a href="forum-93-9.html">9</a><a href="forum-93-10.html">10</a><a href="forum-93-173.html" class="last">... 173</a><label><input type="text" name="custompage" class="px" size="2" title="输入页码，按回车快速跳转" value="4" onkeydown="if(event.keyCode==13) {window.location='forum.php?mod=forumdisplay&amp;fid=93&amp;page='+this.value;; doane(event);}"><span title="共 173 页"> / 173 页</span></label><a href="forum-93-5.html" class="nxt">下一页</a></div></span>
+					<span id="visitedforumstmp" onmouseover="$('visitedforums').id = 'visitedforumstmp';this.id = 'visitedforums';showMenu({'ctrlid':this.id,'pos':'21'})" class="pgb y"><a href="forum.php">返&nbsp;回</a></span>
+					<a href="javascript:;" id="newspecialtmp" onmouseover="$('newspecial').id = 'newspecialtmp';this.id = 'newspecial';showMenu({'ctrlid':this.id})" onclick="showWindow('newthread', 'forum.php?mod=post&amp;action=newthread&amp;fid=93')" title="发新帖"><img src="static/image/common/pn_post.png" alt="发新帖"></a></div>
+				<!--[diy=diyfastposttop]--><div id="diyfastposttop" class="area"><div id="frameGrip4K" class="frame move-span cl frame-1"><div id="frameGrip4K_left" class="column frame-1-c"><div id="frameGrip4K_left_temp" class="move-span temp"></div><div id="portal_block_478" class="block move-span"><div id="portal_block_478_content" class="dxb_bc"></div></div></div></div></div><!--[/diy]-->
+				<script type="text/javascript">
+var postminchars = parseInt('20');
+var postmaxchars = parseInt('40000');
+var disablepostctrl = parseInt('0');
+var fid = parseInt('93');
+</script>
+				<div id="f_pst" class="bm">
+					<div class="bm_h">
+						<h2>快速发帖</h2>
+					</div>
+					<div class="bm_c">
+						<form method="post" autocomplete="off" id="fastpostform" action="forum.php?mod=post&amp;action=newthread&amp;fid=93&amp;topicsubmit=yes&amp;infloat=yes&amp;handlekey=fastnewpost" onsubmit="return fastpostvalidate(this)">
+
+							<div id="fastpostreturn" style="margin:-5px 0 5px"></div>
+
+							<div class="pbt cl">
+								<div class="ftid">
+									<select name="typeid" id="typeid_fast" width="80" selecti="0" style="display: none;">
+
+
+
+
+										<option value="0"></option></select><a href="javascript:;" id="typeid_fast_ctrl" style="width:80px" tabindex="1">选择主题分类</a>
+								</div>
+								<script type="text/javascript" reload="1">simulateSelect('typeid_fast');</script>
+								<input type="text" id="subject" name="subject" class="px" value="" onkeyup="strLenCalc(this, 'checklen', 80);" tabindex="11" style="width: 25em">
+								<span>还可输入 <strong id="checklen">80</strong> 个字符</span>
+							</div>
+
+							<div class="cl">
+								<div id="fastposteditor">
+									<div class="tedt">
+										<div class="bar">
+<span class="y">
+<a href="forum.php?mod=post&amp;action=newthread&amp;fid=93" onclick="switchAdvanceMode(this.href);doane(event);">高级模式</a>
+</span><script src="http://s1.eoeandroid.com/js/seditor.js?fa1" type="text/javascript"></script>
+											<div class="fpd">
+												<a href="javascript:;" title="文字加粗" class="fbld">B</a>
+												<a href="javascript:;" title="设置文字颜色" class="fclr" id="fastpostforecolor">Color</a>
+												<a id="fastpostimg" href="javascript:;" title="图片" class="fmg">Image</a>
+												<a id="fastposturl" href="javascript:;" title="添加链接" class="flnk">Link</a>
+												<a id="fastpostquote" href="javascript:;" title="引用" class="fqt">Quote</a>
+												<a id="fastpostcode" href="javascript:;" title="代码" class="fcd">Code</a>
+												<a href="javascript:;" class="fsml" id="fastpostsml">Smilies</a>
+												<script src="http://s1.eoeandroid.com/js/at.js?fa1" type="text/javascript"></script>
+												<a id="fastpostat" href="javascript:;" title="@朋友" class="fat">@朋友</a>
+											</div></div>
+										<div class="area">
+											<div class="pt hm">
+												您现在无权发帖。<a href="javascript:;" onclick="$('newspecial').onclick()" class="xi2">点击查看原因</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div id="seccheck_fastpost">
+									<div class="mtm"><span id="secqaa_qSI8SLl5"><input name="secqaahash" type="hidden" value="qSI8SLl5">验证问答 <span id="seccodeqSI8SLl5" onclick="showMenu(this.id)"><input name="secanswer" id="secqaaverify_qSI8SLl5" type="text" autocomplete="off" style="width:100px" class="txt px vm" onblur="checksec('qaa', 'qSI8SLl5')"> <a href="javascript:;" onclick="updatesecqaa('qSI8SLl5');doane(event);" class="xi2">换一个</a><span id="checksecqaaverify_qSI8SLl5"><img src="static/image/common/none.gif" width="16" height="16" class="vm"></span></span><div id="seccodeqSI8SLl5_menu" class="p_pop p_opt" style="display:none">eoe社区域名是什么?（提示：eoeandroid.com）</div></span>
+										<script type="text/javascript" reload="1">updatesecqaa('qSI8SLl5', '<sec> <span id="sec<hash>" onclick="showMenu(this.id)"><sec></span><div id="sec<hash>_menu" class="p_pop p_opt" style="display:none"><sec></div>', 'forum::forumdisplay');</script>
+									</div></div>
+
+								<input type="hidden" name="formhash" value="4804b765">
+								<input type="hidden" name="usesig" value="1">
+							</div>
+
+
+							<p class="ptm pnpost">
+								<a href="home.php?mod=spacecp&amp;ac=credit&amp;op=rule&amp;fid=93" class="y" target="_blank">本版积分规则</a>
+							<div id="gt_forumdisplay_fastpost_btn_extra" class="" style="margin:10px  0px 10px  0px "><table><tbody><tr><th style="width:80px;"><div id="gt_tx">*滑动验证:</div></th><td><script type="text/javascript" src="http://api.geetest.com/get.php?gt=d1e176aedb3fce6647a8a86ea278b1f8&amp;challenge=69acd440585caaef441a5ce9d6b97568&amp;product=float&amp;sdk=discuz_1.0"></script><div id="geetest_1475733584190" class="gt_holder float" style="touch-action: none;"><div class="gt_widget gt_hide"><div class="gt_holder_top"></div><div class="gt_box_holder" style="height: 116px;"><div class="gt_box"><div class="gt_loading"><div class="gt_loading_icon"></div><div class="gt_loading_text">加载中...</div></div><a class="gt_bg gt_hide" style="background-image: none;"><div class="gt_cut_bg gt_hide"><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -157px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -145px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -265px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -277px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -181px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -169px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -241px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -253px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -109px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -97px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -289px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -301px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -85px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -73px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -25px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -37px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -13px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -1px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -121px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -133px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -61px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -49px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -217px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -229px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -205px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -193px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -145px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -157px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -277px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -265px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -169px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -181px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -253px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -241px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -97px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -109px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -301px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -289px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -73px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -85px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -37px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -25px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -1px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -13px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -133px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -121px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -49px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -61px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -229px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -217px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -193px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/bg/430b90c6.webp); background-position: -205px 0px;"></div></div><div class="gt_slice gt_hide" style="left: 0px; width: 53px; height: 52px; top: 20px; background-image: none;"></div></a><a class="gt_fullbg gt_hide" style="cursor: default; background-image: none;"><div class="gt_cut_fullbg gt_hide"><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -157px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -145px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -265px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -277px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -181px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -169px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -241px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -253px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -109px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -97px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -289px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -301px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -85px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -73px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -25px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -37px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -13px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -1px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -121px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -133px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -61px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -49px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -217px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -229px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -205px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -193px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -145px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -157px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -277px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -265px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -169px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -181px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -253px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -241px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -97px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -109px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -301px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -289px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -73px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -85px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -37px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -25px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -1px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -13px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -133px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -121px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -49px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -61px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -229px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -217px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -193px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/496156f80/496156f80.webp); background-position: -205px 0px;"></div></div><div class="gt_flash" style="height: 94px;"></div><div class="gt_ie_success gt_hide"></div></a><a class="gt_curtain gt_hide" style="background-image: none;"><div class="gt_curtain_bg_wrap"><div class="gt_curtain_bg"><div class="gt_cut_curtain"></div></div></div><div class="gt_curtain_button gt_hide"></div></a><a class="gt_box_tips" style="display: none;"></a></div><div class="gt_info gt_show"><div class="gt_info_tip error"><div class="gt_info_icon"></div><div class="gt_info_text"><span class="gt_info_type">出现错误:</span><span class="gt_info_content">请关闭验证重试</span></div></div></div></div><div class="gt_bottom"><a class="gt_refresh_button"><div class="gt_refresh_tips">刷新验证</div></a><a class="gt_help_button" href="http://www.geetest.com/contact#report" target="_blank"><div class="gt_help_tips">帮助反馈</div></a><a class="gt_logo_button" href="http://www.geetest.com/first_page" target="_blank"></a></div></div><div class="gt_input"><input class="geetest_challenge" type="hidden" name="geetest_challenge" value=""><input class="geetest_validate" type="hidden" name="geetest_validate" value=""><input class="geetest_seccode" type="hidden" name="geetest_seccode" value=""></div><div class="gt_slider"><div class="gt_guide_tip gt_show">按住左边滑块，拖动完成上方拼图</div><div class="gt_slider_knob gt_show" style="left: 0px;"></div><div class="gt_curtain_tip gt_hide">点击上图按钮并沿道路拖动到终点处</div><div class="gt_curtain_knob gt_hide">移动到此开始验证</div><div class="gt_ajax_tip error"></div></div></div></td></tr></tbody></table></div><button type="submit" name="topicsubmit" id="fastpostsubmit" value="topicsubmit" tabindex="13" class="pn pnc"><strong>发表帖子</strong></button>
+							</p>    <script type="text/javascript">
+        function move_geetest_before_submit() {
+            var gt_submitBtn = $('fastpostsubmit');
+            var geetest = $('gt_forumdisplay_fastpost_btn_extra');
+            gt_submitBtn.parentNode.insertBefore(geetest, gt_submitBtn);
+            //_attachEvent(gt_submitBtn, 'click', GeeTestWidget.call_refresh);
+        }
+
+        _attachEvent(window, 'load', move_geetest_before_submit);
+
+
+        function get_button(){
+            var b = [];
+            var buttons = document.getElementsByTagName("button")
+            for(var i=0; i<buttons.length; i++){
+                var button = buttons[i];
+                if(button.type == "submit"){
+                    b.push(button)
+                }
+            }
+            return b;
+        }
+
+
+        window.gt_custom_ajax = function (status, $) {
+            function refresh(){
+                console.log("click");
+                setTimeout(function(){
+                    $(".gt_refresh_button").click();
+                },3000);
+            }
+            if(status) {
+              var buttons = get_button();
+              for(var i in buttons){
+                _attachEvent(buttons[i], 'click', refresh);
+              }
+
+            }
+         }
+     </script><span>
+将此主题同步到:
+
+
+<script type="text/javascript">
+//var _allow_qq = true;
+var _allow_t = true;
+//var _syn_qq = false;
+var _syn_t = false;
+var _is_oauth_user = true;
+var _is_feed_auth = true;
+var _is_token_outofdate = false;
+function connect_post_init() {
+//			if (_allow_qq && _syn_qq) {
+//				if (_is_feed_auth && !_is_token_outofdate) {
+//					$('connectPost_synQQ').className = 'syn_qq_check';
+//					$('connectPost_synQQ').title = '已设置同步至QQ空间';
+//					$('connect_publish_feed').value = 1;
+//				} else {
+//					$('connectPost_synQQ').className = 'syn_qq';
+//					$('connectPost_synQQ').title = '未设置同步至QQ空间';
+//					$('connect_publish_feed').value = 0;
+//				}
+//			}
+
+if (_allow_t && _syn_t) {
+if (_is_feed_auth && !_is_token_outofdate) {
+$('connectPost_synT').className = 'syn_tqq_check';
+$('connectPost_synT').title = '已设置同步至腾讯微博';
+$('connect_publish_t').value = 1;
+} else {
+$('connectPost_synT').className = 'syn_tqq';
+$('connectPost_synT').title = '未设置同步至腾讯微博';
+$('connect_publish_t').value = 0;
+}
+}
+
+//			if (_allow_qq) {
+//				$('connectPost_synQQ').onclick = function () {
+//					connect_syn_option_toggle(this);
+//				}
+//			}
+if (_allow_t) {
+$('connectPost_synT').onclick = function () {
+connect_syn_option_toggle(this);
+}
+}
+if (getcookie('connect_synpost_tip')) {
+connect_post_tip();
+}
+}
+function connect_syn_option_toggle(opt) {
+if (_is_feed_auth && !_is_token_outofdate) {
+if ($(opt.getAttribute('rel')).value == 1) {
+opt.className = opt.className.replace('_check', '');
+opt.title = opt.title.replace('已', '未');
+$(opt.getAttribute('rel')).value = 0;
+} else {
+$(opt.getAttribute('rel')).value = 1;
+opt.className += '_check';
+opt.title = opt.title.replace('未', '已');
+}
+} else {
+var _auth_text = '马上完善授权，您将可以发表主题时同步到QQ空间和腾讯微博，第一时间和大家分享您在论坛中的新鲜事儿。';
+if (_is_token_outofdate) {
+_auth_text = '为了您的账号安全，请使用QQ帐号重新登录，将为您升级帐号安全机制<br/><br/>点击<a href="http://www.eoeandroid.com/connect.php?mod=login&op=init&referer=forum.php%3Fmod%3Dforumdisplay%26fid%3D93%26page%3D4"><img src="static/image/common/qq_login.gif" class="vm" alt="QQ登录" /></a>页面将发生跳转，请确保您已保存好帖子数据';
+var _button = '我知道了';
+showDialog(_auth_text, 'notice', null, null, 0, null, null, _button);
+return;
+} else if (!_is_oauth_user) {
+_auth_text = '马上绑定QQ账号，您将可以发表主题时同步到QQ空间和腾讯微博，第一时间和大家分享您在论坛中的新鲜事儿。';
+}
+showDialog(_auth_text, 'notice', '授权提示', 'connect_goto_setting()', 0, null, null, '修改授权');
+}
+}
+function connect_post_tip() {
+if ($('fastpostform')) {
+return;
+}
+if (_is_token_outofdate) {
+if ($('synnotice')) {
+$('synnotice').style.display = 'none';
+}
+return;
+}
+var r = document.getElementById('rstnotice');
+var c = document.createElement('div');
+c.setAttribute('id', 'synnotice');
+c.setAttribute('class', 'ntc_l bbs');
+if(BROWSER.ie) {
+c.id = 'synnotice';
+c.className = 'ntc_l bbs';
+}
+c.style.display = 'block';
+r.parentNode.insertBefore(c, r.nextSibling);
+c.innerHTML = '<a href="javascript:void(0);" title="关闭同步发帖提示" class="d y" onclick="connect_syn_tip_hide();">close</a>此主题将同步到腾讯微博，您的听众能够看到您发表的主题。&nbsp;&nbsp;<a class="xi2" href="javascript:void(0);" onclick="connect_syn_cancel();" title="取消发表主题时同步到腾讯微博，将来您可以到“设置-QQ绑定”页面重新设置。"><strong>暂不同步</strong></a>';
+}
+function connect_syn_tip_hide() {
+setcookie('connect_synpost_tip', '', '-1');
+$('synnotice').style.display = 'none';
+}
+function connect_syn_cancel() {
+ajaxget('http://www.eoeandroid.com/connect.php?mod=config&op=synconfig', '');
+//			$('connectPost_synQQ').className = 'syn_qq';
+//			$('connectPost_synQQ').title = '未设置同步至QQ空间';
+//			$('connect_publish_feed').value = 0;
+$('connectPost_synT').className = 'syn_tqq';
+$('connectPost_synT').title = '未设置同步至腾讯微博';
+$('connect_publish_t').value = 0;
+$('synnotice').style.display = 'none';
+}
+function connect_goto_setting() {
+var _url = "http://www.eoeandroid.com/home.php?mod=spacecp&ac=plugin&id=qqconnect:spacecp";
+hideMenu('fwin_dialog', 'dialog')
+var _newWindow = window.open(_url, 'newWindow');
+_newWindow.focus();
+}
+_attachEvent(window, 'load', function(){
+connect_post_init();
+});
+</script>
+
+<a title="未设置同步至腾讯微博" class="syn_tqq" href="javascript:void(0);" id="connectPost_synT" rel="connect_publish_t">腾讯微博</a>
+<input type="hidden" name="connect_publish_t" id="connect_publish_t" value="0">
+
+</span>
+							<p></p>
+						</form>
+					</div>
+				</div>
+				<!--[diy=diyforumdisplaybottom]--><div id="diyforumdisplaybottom" class="area"></div><!--[/diy]-->
+			</div>
+
+		</div>
+	</div>
+	<div id="visitedforums_menu" class="p_pop blk cl" style="position: absolute; z-index: 301; left: 250px; top: 376px; display: none;" initialized="true">
+		<table cellspacing="0" cellpadding="0">
+			<tbody><tr>
+				<td id="v_forums">
+					<h3 class="mbn pbn bbda xg1">浏览过的版块</h3>
+					<ul class="xl xl1">
+						<li><a href="forum-27-1.html" class="">Android实例教程</a></li><li><a href="forum-23-1.html">Android源码下载</a></li><li><a href="forum-45-1.html">Android开发问答</a></li><li><a href="forum-53-1.html">Android新手入门</a></li></ul>
+				</td>
+			</tr>
+			</tbody></table>
+	</div>
+	<script type="text/javascript">document.onkeyup = function(e){keyPageScroll(e, 1, 1, 'forum.php?mod=forumdisplay&fid=93&filter=&orderby=lastpost&', 4);}</script>
+	<script type="text/javascript">checkForumnew_handle = setTimeout(function () {checkForumnew(93, lasttime);}, checkForumtimeout);</script>
+	<div class="wp mtn">
+		<!--[diy=diy3]--><div id="diy3" class="area"></div><!--[/diy]-->
+	</div>
+	<script>fixed_top_nv();</script>	</div>
+
+
+<div id="ft" class="wp cl">
+	<div id="flk" class="y">
+		<p>
+			<a href="http://wpa.qq.com/msgrd?V=3&amp;uin=908261088&amp;Site=eoe 移动开发者论坛&amp;Menu=yes&amp;from=discuz" target="_blank" title="QQ"><img src="static/image/common/site_qq.jpg" alt="QQ"></a><span class="pipe">|</span><a href="http://www.eoeandroid.com/thread-317184-1-1.html">联系我们</a><span class="pipe">|</span><a href="forum.php?mod=misc&amp;action=showdarkroom">小黑屋</a><span class="pipe">|</span><a href="forum.php?mobile=yes">手机版</a><span class="pipe">|</span><strong><a href="http://www.eoeandroid.com/" target="_blank">eoe 移动开发者论坛</a></strong>
+			( <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备11018032 京公网安11010802020210</a> )&nbsp;<a href="http://discuz.qq.com/service/security" target="_blank" title="防水墙保卫网站远离侵害"><img src="static/image/common/security.png"></a>&nbsp;&nbsp;<a href="http://stats.discuz.qq.com?ADTAG=FROUM.FOOTER.CLICK.ICON" title="腾讯分析" target="_blank"><img title="腾讯分析" src="http://tcss.qq.com/icon/toss_12.gif" border="0"></a><script type="text/javascript" src="http://tcss.qq.com/ping.js?v=1fa1" charset="utf-8"></script><script type="text/javascript" reload="1">pgvMain({"discuzParams":{"r2":"7379687","ui":"3005242","ty":2,"rt":"forum","md":"forumdisplay","fi":"93","pn":4,"qq":"011","logo":12},"extraParams":""});</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="http://www.google-analytics.com/ga.js" type="text/javascript"></script>
+			<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8242804-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+		</p>
+		<p class="xs0">
+			GMT+8, 2016-10-6 13:59<span id="debuginfo">
+, Processed in 0.729090 second(s), 17 queries
+, Memcache On.
+</span>
+		</p>
+	</div>
+	<div id="frt">
+		<p>Powered by <strong><a href="http://www.discuz.net" target="_blank">Discuz!</a></strong> <em>X3.2</em></p>
+		<p class="xs0">© 2001-2013 <a href="http://www.comsenz.com" target="_blank">Comsenz Inc.</a></p>
+	</div></div><div id="geetest_1475733593474" class="gt_holder popup" style="touch-action: none;"><div class="gt_mask"></div><div class="gt_popup_wrap"><div class="gt_popup_header"><div class="gt_popup_ready">请先完成下方验证</div><div class="gt_popup_finish">页面将在2秒后跳转</div><div class="gt_popup_cross"></div></div><div class="gt_popup_box"><div class="gt_widget"><div class="gt_holder_top"></div><div class="gt_box_holder" style="height: 116px;"><div class="gt_box"><div class="gt_loading"><div class="gt_loading_icon"></div><div class="gt_loading_text">加载中...</div></div><a class="gt_bg gt_show" style="background-image: none;"><div class="gt_cut_bg gt_show"><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -157px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -145px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -265px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -277px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -181px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -169px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -241px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -253px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -109px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -97px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -289px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -301px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -85px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -73px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -25px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -37px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -13px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -1px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -121px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -133px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -61px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -49px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -217px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -229px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -205px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -193px -58px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -145px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -157px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -277px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -265px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -169px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -181px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -253px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -241px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -97px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -109px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -301px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -289px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -73px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -85px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -37px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -25px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -1px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -13px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -133px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -121px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -49px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -61px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -229px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -217px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -193px 0px;"></div><div class="gt_cut_bg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/bg/503a3462.webp); background-position: -205px 0px;"></div></div><div class="gt_slice gt_show" style="left: 0px; width: 61px; height: 58px; top: 17px; background-image: url(http://static.geetest.com/pictures/gt/d0fe39770/slice/141f2066.png);"></div></a><a class="gt_fullbg gt_show" style="cursor: default; background-image: none;"><div class="gt_cut_fullbg gt_show"><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -157px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -145px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -265px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -277px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -181px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -169px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -241px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -253px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -109px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -97px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -289px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -301px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -85px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -73px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -25px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -37px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -13px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -1px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -121px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -133px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -61px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -49px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -217px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -229px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -205px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -193px -58px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -145px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -157px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -277px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -265px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -169px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -181px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -253px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -241px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -97px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -109px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -301px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -289px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -73px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -85px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -37px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -25px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -1px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -13px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -133px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -121px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -49px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -61px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -229px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -217px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -193px 0px;"></div><div class="gt_cut_fullbg_slice" style="background-image: url(http://static.geetest.com/pictures/gt/aec181a90/aec181a90.webp); background-position: -205px 0px;"></div></div><div class="gt_flash" style="height: 94px;"></div><div class="gt_ie_success"></div></a><a class="gt_curtain gt_hide" style="background-image: none;"><div class="gt_curtain_bg_wrap"><div class="gt_curtain_bg"><div class="gt_cut_curtain"></div></div></div><div class="gt_curtain_button gt_hide"></div></a><a class="gt_box_tips" style="display: none;"></a></div><div class="gt_info"><div class="gt_info_tip"><div class="gt_info_icon"></div><div class="gt_info_text"></div></div></div></div><div class="gt_bottom"><a class="gt_refresh_button"><div class="gt_refresh_tips">刷新验证</div></a><a class="gt_help_button" href="http://www.geetest.com/contact#report" target="_blank"><div class="gt_help_tips">帮助反馈</div></a><a class="gt_logo_button" href="http://www.geetest.com/first_page" target="_blank"></a></div></div><div class="gt_slider"><div class="gt_guide_tip gt_show">按住左边滑块，拖动完成上方拼图</div><div class="gt_slider_knob gt_show" style="left: 0px;"></div><div class="gt_curtain_tip gt_hide">点击上图按钮并沿道路拖动到终点处</div><div class="gt_curtain_knob gt_hide">移动到此开始验证</div><div class="gt_ajax_tip"></div></div></div></div></div><div id="geetest_1475733593474" class="gt_holder popup" style="touch-action: none;"><div class="gt_mask"></div><div class="gt_popup_wrap"><div class="gt_popup_header"><div class="gt_popup_ready">请先完成下方验证</div><div class="gt_popup_finish">页面将在2秒后跳转</div><div class="gt_popup_cross"></div></div><div class="gt_popup_box"><div class="gt_widget"><div class="gt_holder_top"></div><div class="gt_box_holder" style="height: 116px;"><div class="gt_box"><div class="gt_loading"><div class="gt_loading_icon"></div><div class="gt_loading_text">加载中...</div></div><a class="gt_bg gt_hide" style="background-image: none;"><div class="gt_cut_bg gt_hide"></div><div class="gt_slice gt_hide" style="left: 0px; width: 52px; height: 50px; top: 13px; background-image: none;"></div></a><a class="gt_fullbg gt_hide" style="cursor: default; background-image: none;"><div class="gt_cut_fullbg gt_hide"></div><div class="gt_flash" style="height: 94px;"></div><div class="gt_ie_success gt_hide"></div></a><a class="gt_curtain gt_hide" style="background-image: none;"><div class="gt_curtain_bg_wrap"><div class="gt_curtain_bg"><div class="gt_cut_curtain"></div></div></div><div class="gt_curtain_button gt_hide"></div></a><a class="gt_box_tips" style="display: none;"></a></div><div class="gt_info gt_show"><div class="gt_info_tip error"><div class="gt_info_icon"></div><div class="gt_info_text"><span class="gt_info_type">出现错误:</span><span class="gt_info_content">请关闭验证重试</span></div></div></div></div><div class="gt_bottom"><a class="gt_refresh_button"><div class="gt_refresh_tips">刷新验证</div></a><a class="gt_help_button" href="http://www.geetest.com/contact#report" target="_blank"><div class="gt_help_tips">帮助反馈</div></a><a class="gt_logo_button" href="http://www.geetest.com/first_page" target="_blank"></a></div></div><div class="gt_slider"><div class="gt_guide_tip gt_show">按住左边滑块，拖动完成上方拼图</div><div class="gt_slider_knob gt_show" style="left: 0px;"></div><div class="gt_curtain_tip gt_hide">点击上图按钮并沿道路拖动到终点处</div><div class="gt_curtain_knob gt_hide">移动到此开始验证</div><div class="gt_ajax_tip error"></div></div></div></div></div>
+<script src="home.php?mod=spacecp&amp;ac=pm&amp;op=checknewpm&amp;rand=1475733576" type="text/javascript"></script>
+<div id="scrolltop" style="left: 938px; visibility: visible;">
+	<span hidefocus="true"><a title="返回顶部" onclick="window.scrollTo('0','0')" class="scrolltopa"><b>返回顶部</b></a></span>
+<span>
+<a href="forum.php" hidefocus="true" class="returnboard" title="返回版块"><b>返回版块</b></a>
+</span>
+</div>
+<script type="text/javascript">_attachEvent(window, 'scroll', function () { showTopLink(); });checkBlind();</script>
+<div id="discuz_tips" style="display:none;"></div>
+<script type="text/javascript">
+				var tipsinfo = '7379687|X3.2|0.6||0|999FD31AE3AA97E2AA06FD68E68E8AB6|3005242|10|1475733576|2dc66b8a7d81f28de415e6395788d5ea|2';
+			</script>
+<script src="http://discuz.gtimg.cn/cloud/scripts/discuz_tips.js?v=1" type="text/javascript" charset="UTF-8"></script><!-- +++++++++++++++++++++++++右侧二维码+++++++++++++++++++++ -->
+
+<div class="ferweima" id="ferweima" style="display: none;">
+	<div class="ferweiman">
+		<div class="ferweima_close" onclick="closeErweima()">关闭</div>
+		<img src="http://static-jkxy.qiniudn.com/eoeandroid%2Fferweima.jpg" width="180" height="180">
+		<p>扫一扫 关注eoe官方微信</p>
+	</div>
+</div>
+<style type="text/css">
+	.ferweima{width: 180px;height: 200px;background: #fff;position: fixed;right:10px;bottom: 200px;padding: 8px 0 6px 0;}
+	.ferweiman{position: relative;width: 100%;height: 100%;}
+	.ferweiman p{text-align: center;}
+	.ferweima_close{width: 30px;height: 15px;right: 0;top: -6px;position: absolute;cursor: pointer;}
+</style>
+
+<script type="text/javascript">
+//jq = jQuery.noConflict();
+
+var ferweima=document.getElementById('ferweima');
+var ferweima_close=document.getElementById('ferweima_close');
+var cval=getCookie('name');
+if(cval!=null)
+//$('.ferweima').css('display','none');
+ferweima.style.display="none"
+
+function closeErweima()
+{
+//$('.ferweima').css('display','none');
+ferweima.style.display="none"
+setCookie("name","hidden_erweima");
+}
+
+
+
+
+function setCookie(name,value)
+{
+    var Hours = 2;
+    var exp = new Date();
+    exp.setTime(exp.getTime() + Hours*60*60*1000);
+    document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
+}
+
+//读取cookies
+function getCookie(name)
+{
+    var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+
+    if(arr=document.cookie.match(reg))
+
+        return unescape(arr[2]);
+    else
+        return null;
+}
+
+
+</script>
+
+
+<!-- +++++++++++++++++++++++++右侧二维码+++++++++++++++++++++ -->
+
+
+
+<div class="sogoutip" style="z-index: 2147483645; visibility: hidden;"></div><div class="sogoubottom" id="sougou_bottom" style="display: block;"></div><div id="ext_stophi" style="z-index: 2147483647;"><div class="extnoticebg"></div><div class="extnotice"><h2>关闭提示 <a href="#" title="关闭提示" id="closenotice" class="closenotice">关闭</a></h2><p id="sogouconfirmtxt"></p>  <a id="sogouconfirm" href="#" class="extconfirm">确 认</a> <a id="sogoucancel" href="#" class="extconfirm">取 消</a></div></div><div id="ext_overlay" class="ext_overlayBG" style="display: none; z-index: 2147483646;"></div><iframe class="sogou_sugg_feedbackquan" frameborder="0" scrolling="no" src="http://ht.www.sogou.com/websearch/features/yun6.jsp?pid=sogou-brse-d2a452edff079ca6&amp;w=1920&amp;v=7400&amp;st=1475733596558&amp;od=2532&amp;ls=1475733534345&amp;lc=&amp;lk=&amp;sd=44&amp;cd=0&amp;kd=0&amp;u=1458954706639045&amp;y=6B0B51F4923AF5219F8A4075C7794E6C&amp;query=Android%E5%BC%80%E5%8F%91%E8%BF%9B%E9%98%B6_Android%E8%AE%A8%E8%AE%BA_Android%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%20-%20Powered%20by%20Discuz!|http%3A%2F%2Fwww.eoeandroid.com%2Fforum-93-4.html&amp;r=http%3A%2F%2Fwww.eoeandroid.com%2Fforum-93-3.html" style="border: none; display: block; z-index: 2147483645; background: transparent;"></iframe><script src="http://pb.sogou.com/pv.gif?hintbl=-1&amp;uigs_productid=webext&amp;type=ext_sugg&amp;uigs_t=1475733597567&amp;lt=14075&amp;ie=0&amp;v=7400&amp;y=6B0B51F4923AF5219F8A4075C7794E6C&amp;query=Android%E5%BC%80%E5%8F%91%E8%BF%9B%E9%98%B6_Android%E8%AE%A8%E8%AE%BA_Android%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%20-%20Powered%20by%20Discuz!|http%3A%2F%2Fwww.eoeandroid.com%2Fforum-93-4.html"></script></body></html>

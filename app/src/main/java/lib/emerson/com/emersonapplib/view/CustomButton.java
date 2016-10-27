@@ -17,13 +17,13 @@ public class CustomButton  extends Button{
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-        Log.e("TAG", "dispatchTouchEvent-- action=" + event.getAction());
+        Log.e("底层View", "dispatchTouchEvent-- action=" + event.getAction());
         return super.dispatchTouchEvent(event);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        Log.e("TAG", "onTouchEvent-- action="+event.getAction());
+        Log.e("底层View", "onTouchEvent-- action="+event.getAction());
         return super.onTouchEvent(event);
     }
 

@@ -4,12 +4,14 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.PointF;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.view.animation.AnticipateInterpolator;
+import android.view.animation.DecelerateInterpolator;
 import android.view.animation.OvershootInterpolator;
 
 /**
@@ -103,6 +105,7 @@ public class CstSwipeDelMenu extends ViewGroup {
 
     /**
      * 设置是否开启IOS阻塞式交互
+     *
      * @param ios
      */
     public CstSwipeDelMenu setIos(boolean ios) {
@@ -116,6 +119,7 @@ public class CstSwipeDelMenu extends ViewGroup {
 
     /**
      * 设置是否开启左滑出菜单，设置false 为右滑出菜单
+     *
      * @param leftSwipe
      * @return
      */
@@ -142,23 +146,27 @@ public class CstSwipeDelMenu extends ViewGroup {
         final boolean measureMatchParentChildren = MeasureSpec.getMode(heightMeasureSpec) != MeasureSpec.EXACTLY;
         boolean isNeedMeasureChildHeight = false;
 
+        //对子view进行重置排序
         for (int i = 0; i < childCount; i++) {
             View childView = getChildAt(i);
             if (childView.getVisibility() != GONE) {
                 //measureChild(childView, widthMeasureSpec, heightMeasureSpec);
-                measureChildWithMargins(childView, widthMeasureSpec, 0, heightMeasureSpec, 0);
-                final MarginLayoutParams lp = (MarginLayoutParams) childView.getLayoutParams();
+                measureChildWithMargins(childView, widthMeasureSpec, 0, heightMeasureSpec, 0);      //计算出childView的宽和高,计算时把 margin 及  padding 也作为子视图大小的一部分
+                final MarginLayoutParams lp = (MarginLayoutParams) childView.getLayoutParams();     //获取控件的LayoutParams
                 mHeight = Math.max(mHeight, childView.getMeasuredHeight() + lp.topMargin + lp.bottomMargin);
+
                 if (measureMatchParentChildren && lp.height == LayoutParams.MATCH_PARENT) {
                     isNeedMeasureChildHeight = true;
                 }
                 if (i > 0) {//第一个布局是Left item，从第二个开始才是RightMenu
-                    mRightMenuWidths += childView.getMeasuredWidth();
+                    mRightMenuWidths += childView.getMeasuredWidth();       //计算右侧菜单宽度总和(也是最大滑动距离)
                 }
             }
         }
-        setMeasuredDimension(mScreenW, mHeight);//宽度取屏幕宽度
-        mLimit = mRightMenuWidths * 4 / 10;//滑动判断的临界值
+
+        //设置ViewGroup的宽高，其中宽度取屏幕宽度
+        setMeasuredDimension(mScreenW, mHeight);
+        mLimit = mRightMenuWidths * 4 / 10;     //滑动判断的临界值
         //Log.d(TAG, "onMeasure() called with: " + "mRightMenuWidths = [" + mRightMenuWidths);
         if (isNeedMeasureChildHeight) {//如果子View的height有MatchParent属性的，设置子View高度
             forceUniformHeight(childCount, widthMeasureSpec);
@@ -213,7 +221,7 @@ public class CstSwipeDelMenu extends ViewGroup {
                     childView.layout(left, getPaddingTop(), left + mScreenW, getPaddingTop() + childView.getMeasuredHeight());
                     left = left + mScreenW;
                 } else {
-                    if (isLeftSwipe) {
+                    if (isLeftSwipe) {  //侧滑菜单 在 左边还是右边
                         childView.layout(left, getPaddingTop(), left + childView.getMeasuredWidth(), getPaddingTop() + childView.getMeasuredHeight());
                         left = left + childView.getMeasuredWidth();
                     } else {
@@ -239,7 +247,7 @@ public class CstSwipeDelMenu extends ViewGroup {
                     if (isTouching) {//如果有别的指头摸过了，那么就return false。这样后续的move..等事件也不会再来找这个View了。
                         return false;
                     } else {
-                        isTouching = true;//第一个摸的指头，赶紧改变标志，宣誓主权。
+                        isTouching = true;  //表示现在是第一个摸的指头，赶紧改变标志，宣誓主权。
                     }
                     mLastP.set(ev.getRawX(), ev.getRawY());
 
@@ -248,7 +256,7 @@ public class CstSwipeDelMenu extends ViewGroup {
                         if (mViewCache != this) {
                             mViewCache.smoothClose();
                             mViewCache = null;
-                            iosInterceptFlag = isIos;//add by 2016 09 11 ，IOS模式开启的话，且当前有侧滑菜单的View，且不是自己的，就该拦截事件咯。
+                            iosInterceptFlag = isIos;   //add by 2016 09 11 ，IOS模式开启的话，且当前有侧滑菜单的View，且不是自己的，就该拦截事件咯。
                         }
                         //只要有一个侧滑菜单处于打开状态， 就不给外层布局上下滑动了
                         getParent().requestDisallowInterceptTouchEvent(true);
@@ -256,11 +264,13 @@ public class CstSwipeDelMenu extends ViewGroup {
                     //求第一个触点的id， 此时可能有多个触点，但至少一个，计算滑动速率用
                     mPointerId = ev.getPointerId(0);
                     break;
+
                 case MotionEvent.ACTION_MOVE:
                     //add by 2016 09 11 ，IOS模式开启的话，且当前有侧滑菜单的View，且不是自己的，就该拦截事件咯。滑动也不该出现
                     if (iosInterceptFlag) {
                         break;
                     }
+                    //计算滑动距离
                     float gap = mLastP.x - ev.getRawX();
                     //为了在水平滑动中禁止父类ListView等再竖直滑动
                     if (Math.abs(gap) > 10 || Math.abs(getScrollX()) > 10) {//2016 09 29 修改此处，使屏蔽父布局滑动更加灵敏，
@@ -272,14 +282,15 @@ public class CstSwipeDelMenu extends ViewGroup {
                     }*/
                     scrollBy((int) (gap), 0);//滑动使用scrollBy
                     //越界修正
-                    if (isLeftSwipe) {//左滑
+                    Log.e("getScrollX",getScrollX() + "");
+                    if (isLeftSwipe) {//菜单是左滑
                         if (getScrollX() < 0) {
                             scrollTo(0, 0);
                         }
                         if (getScrollX() > mRightMenuWidths) {
                             scrollTo(mRightMenuWidths, 0);
                         }
-                    } else {//右滑
+                    } else {    //菜单是右滑
                         if (getScrollX() < -mRightMenuWidths) {
                             scrollTo(-mRightMenuWidths, 0);
                         }
@@ -295,6 +306,7 @@ public class CstSwipeDelMenu extends ViewGroup {
                     //add by 2016 09 11 ，IOS模式开启的话，且当前有侧滑菜单的View，且不是自己的，就该拦截事件咯。滑动也不该出现
                     if (!iosInterceptFlag) {
                         //求伪瞬时速度
+                        //初始化速率的单位
                         verTracker.computeCurrentVelocity(1000, mMaxVelocity);
                         final float velocityX = verTracker.getXVelocity(mPointerId);
                         if (Math.abs(velocityX) > 1000) {//滑动速度超过阈值
@@ -334,7 +346,7 @@ public class CstSwipeDelMenu extends ViewGroup {
                     //释放
                     releaseVelocityTracker();
                     //LogUtils.i(TAG, "onTouch A ACTION_UP ACTION_CANCEL:velocityY:" + velocityX);
-                    isTouching = false;//没有手指在摸我了
+                    isTouching = false;     //没有手指在摸我了
                     break;
                 default:
                     break;
@@ -353,7 +365,7 @@ public class CstSwipeDelMenu extends ViewGroup {
                         //add by 2016 09 10 解决一个智障问题~ 居然不给点击侧滑菜单 我跪着谢罪
                         //这里判断落点在内容区域屏蔽点击，内容区域外，允许传递事件继续向下的的。。。
                         if (ev.getX() < getWidth() - getScrollX()) {
-                            return true;//true表示拦截
+                            return true;    //true表示拦截
                         }
                     }
                 } else {
@@ -390,7 +402,7 @@ public class CstSwipeDelMenu extends ViewGroup {
                 scrollTo((Integer) animation.getAnimatedValue(), 0);
             }
         });
-        mExpandAnim.setInterpolator(new OvershootInterpolator());
+        mExpandAnim.setInterpolator(new DecelerateInterpolator());
         mExpandAnim.setDuration(300).start();
     }
 
@@ -420,9 +432,9 @@ public class CstSwipeDelMenu extends ViewGroup {
      */
     private void acquireVelocityTracker(final MotionEvent event) {
         if (null == mVelocityTracker) {
-            mVelocityTracker = VelocityTracker.obtain();
+            mVelocityTracker = VelocityTracker.obtain();        //获得VelocityTracker类实例
         }
-        mVelocityTracker.addMovement(event);
+        mVelocityTracker.addMovement(event);            //将事件加入到VelocityTracker类实例中
     }
 
     /**

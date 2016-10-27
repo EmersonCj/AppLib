@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.support.design.widget.Snackbar;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -35,6 +36,8 @@ public class MainActivity extends baseActivity implements SwipeRefreshLayout.OnR
     private TextView tv = null;
     private List<String> listdata = null;
     private SwipeRefreshLayout swipeRefreshLayout;
+    private listviewAdapter lvAdapter;
+
     String data[] = {
             "Dialog动画效果", "HorizontalScrollView(interface接口写法)", "Scrollview", "RecyclerView", "Photowallfalls(图片墙)",
             "ViewPager & Fragment", "LruCache算法（包含图片的压缩和缓存）", "回调函数使用", "EventBus", "数据库操作",
@@ -65,7 +68,7 @@ public class MainActivity extends baseActivity implements SwipeRefreshLayout.OnR
         setContentView(R.layout.activity_main);
         dialog = DialogUtils.createLoadingDialog(this, "测试", true);
         getData();
-        listviewAdapter lvAdapter = new listviewAdapter(this, listdata);
+        lvAdapter = new listviewAdapter(this, listdata);
         lv = (ListView) findViewById(R.id.list_view);
         swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.id_swipe_ly);
         initSwipeRefreshLayout();
@@ -411,8 +414,8 @@ public class MainActivity extends baseActivity implements SwipeRefreshLayout.OnR
         public void handleMessage(android.os.Message msg) {
             switch (msg.what) {
                 case REFRESH_COMPLETE:
-                    toast("刷新成功");
                     swipeRefreshLayout.setRefreshing(false);
+
                     break;
 
             }
@@ -424,6 +427,9 @@ public class MainActivity extends baseActivity implements SwipeRefreshLayout.OnR
 
     @Override
     public void onRefresh() {
-        mHandler.sendEmptyMessageDelayed(REFRESH_COMPLETE, 8000);
+
+        mHandler.sendEmptyMessageDelayed(REFRESH_COMPLETE, 1000);
     }
+
+
 }

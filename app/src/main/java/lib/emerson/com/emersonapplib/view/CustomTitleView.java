@@ -155,7 +155,7 @@ public class CustomTitleView extends View {
         * AT_MOST：子视图最多只能是specSize中指定的大小。
         * */
         switch (specMode){
-            case MeasureSpec.EXACTLY:       //当view的大小设置为精确值时，容器传入的是EXACTLY。所以此时的specSize 代表的是精确的尺寸
+            case MeasureSpec.EXACTLY:       //当view的大小设置为精确值（例如match_parten）时，容器传入的是EXACTLY。所以此时的specSize 代表的是精确的尺寸
                 width = getPaddingLeft() + getPaddingRight() + specSize;
                 break;
             case MeasureSpec.AT_MOST:      // 当view的大小设置WARP_CONTENT时，容器传入的是AT_MOST。所以此时的specSize代表的是最大可获得的空间，view可以任意设置，但不能超过specSize

@@ -10,10 +10,13 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        aaptOptions.cruncherEnabled = false
+        aaptOptions.useNewCruncher = false
     }
+
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled false  //是否开启混淆
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -50,9 +53,11 @@ dependencies {
     compile files('libs/libammsdk.jar')
     compile files('libs/BaiduLBS_Android.jar')
     compile 'com.yanzhenjie:recyclerview-swipe:+'
-    compile 'com.zhy:base-rvadapter:3.0.3'
     compile 'com.android.support:appcompat-v7:23.0.3'
     compile 'com.ikimuhendis:ldrawer:0.1'
     compile 'com.android.support:design:23.1.0'
-
+    compile files('libs/hyphenatechat_3.1.5.jar')
+    compile 'com.umeng.analytics:analytics:latest.integration'
+    compile files('libs/phonegap-1.0.0.jar')
+    compile 'com.github.promeg:tinypinyin:1.0.0'
 }

@@ -3,6 +3,7 @@ package lib.emerson.com.emersonapplib.view;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -102,6 +103,11 @@ public class CustomImgContainer extends ViewGroup {
                 : height);
     }
 
+
+    /*
+    * changed： 该参数指出当前ViewGroup的尺寸或者位置是否发生了改变
+    * 后4个参数： 当前ViewGroup相对于其父控件的坐标位置
+    * */
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         int cCount = getChildCount();
@@ -166,6 +172,26 @@ public class CustomImgContainer extends ViewGroup {
         Log.e(TAG, "generateLayoutParams p");
         return new MarginLayoutParams(p);
     }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        Log.e("中间层ViewGroup", "dispatchTouchEvent-- action=" + event.getAction());
+        return super.dispatchTouchEvent(event);
+    }
+
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+        Log.e("中间层ViewGroup", "onInterceptTouchEvent-- action="+ev.getAction());
+        return super.onInterceptTouchEvent(ev);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        Log.e("中间层ViewGroup", "onTouchEvent-- action="+event.getAction());
+        return super.onTouchEvent(event);
+    }
+
+
 
 
 }

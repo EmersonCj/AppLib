@@ -117,7 +117,6 @@ public class AnimationActivity extends baseActivity {
         animator.setRepeatMode(ValueAnimator.RESTART);      //动画重复模式
         animator.setStartDelay(0);                       //动画延时执行
         animator.start();
-
     }
 
 

@@ -2,6 +2,8 @@ package lib.emerson.com.emersonapplib.domain;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.MotionEvent;
 
 import lib.emerson.com.emersonapplib.R;
 
@@ -16,5 +18,19 @@ public class CustomVGTestActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customgroup_test);
     }
+
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        Log.e("Activity", "dispatchTouchEvent-- action=" + event.getAction());
+        return super.dispatchTouchEvent(event);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        Log.e("Activity", "onTouchEvent-- action="+event.getAction());
+        return super.onTouchEvent(event);
+    }
+
 
 }

@@ -303,25 +303,21 @@ public class CstSwipeDelMenu extends ViewGroup {
                     break;
                 case MotionEvent.ACTION_UP:
                 case MotionEvent.ACTION_CANCEL:
-                    //add by 2016 09 11 ，IOS模式开启的话，且当前有侧滑菜单的View，且不是自己的，就该拦截事件咯。滑动也不该出现
+                    //add by 2016 09 11 ，IOS模式开启的话，且当前有侧滑菜单的View，且不是自己的，就该拦截事件咯，滑动也不该出现。
                     if (!iosInterceptFlag) {
-                        //求伪瞬时速度
-                        //初始化速率的单位
-                        verTracker.computeCurrentVelocity(1000, mMaxVelocity);
-                        final float velocityX = verTracker.getXVelocity(mPointerId);
-                        if (Math.abs(velocityX) > 1000) {//滑动速度超过阈值
-                            if (velocityX < -1000) {
-                                if (isLeftSwipe) {//左滑
-                                    //平滑展开Menu
-                                    smoothExpand();
-                                    //展开就加入ViewCache：
-                                    mViewCache = this;
+                        verTracker.computeCurrentVelocity(1000, mMaxVelocity);          //初始化速率的单位
+                        final float velocityX = verTracker.getXVelocity(mPointerId);    //求伪瞬时速度
+                        Log.e("velocityX",velocityX + "");
+                        if (Math.abs(velocityX) > 1000) {   //判断滑动速度是否超过阈值
+                            if (velocityX < -1000) {        //用户在 向左滑
+                                if (isLeftSwipe) {  //菜单Menu在右边
+                                    smoothExpand();          //平滑展开Menu
+                                    mViewCache = this;       //展开就加入ViewCache：
                                 } else {
-                                    //平滑关闭Menu
-                                    smoothClose();
+                                    smoothClose();           //平滑关闭Menu
                                 }
-                            } else {
-                                if (isLeftSwipe) {//左滑
+                            } else {                        //用户在 向右滑
+                                if (isLeftSwipe) {
                                     // 平滑关闭Menu
                                     smoothClose();
                                 } else {
@@ -331,8 +327,8 @@ public class CstSwipeDelMenu extends ViewGroup {
                                     mViewCache = this;
                                 }
                             }
-                        } else {
-                            if (Math.abs(getScrollX()) > mLimit) {//否则就判断滑动距离
+                        } else {     //否则就判断滑动距离是否达到滑动判定临界值
+                            if (Math.abs(getScrollX()) > mLimit) {
                                 //平滑展开Menu
                                 smoothExpand();
                                 //展开就加入ViewCache：
@@ -345,7 +341,6 @@ public class CstSwipeDelMenu extends ViewGroup {
                     }
                     //释放
                     releaseVelocityTracker();
-                    //LogUtils.i(TAG, "onTouch A ACTION_UP ACTION_CANCEL:velocityY:" + velocityX);
                     isTouching = false;     //没有手指在摸我了
                     break;
                 default:
@@ -361,16 +356,16 @@ public class CstSwipeDelMenu extends ViewGroup {
             case MotionEvent.ACTION_UP:
                 //为了在侧滑时，屏蔽子View的点击事件
                 if (isLeftSwipe) {
-                    if (getScrollX() > mScaleTouchSlop) {
+                    if (getScrollX() > mScaleTouchSlop) {       //滑动距离大于mScaleTouchSlop才能打开
                         //add by 2016 09 10 解决一个智障问题~ 居然不给点击侧滑菜单 我跪着谢罪
                         //这里判断落点在内容区域屏蔽点击，内容区域外，允许传递事件继续向下的的。。。
-                        if (ev.getX() < getWidth() - getScrollX()) {
-                            return true;    //true表示拦截
+                        if (ev.getX() < getWidth() - getScrollX()) {        //如果点击的是滑动菜单以外的地方，进行拦截
+                            return true;    //true表示拦截，事件不往子view传递
                         }
                     }
                 } else {
                     if (-getScrollX() > mScaleTouchSlop) {
-                        if (ev.getX() > -getScrollX()) {//点击范围在菜单外 屏蔽
+                        if (ev.getX() > -getScrollX()) {        //点击范围在菜单外 屏蔽
                             return true;
                         }
                     }
